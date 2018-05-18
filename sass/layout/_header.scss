@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 50px;
+    font-weight: 300;
+    font-size: 1.4rem;
+    height: 50px;
+    position: relative;
+    z-index: 100;
+    &__logo {
+    }
+
+    &__nav {
+        ul {
+            list-style: none;
+            display: flex;
+            li {
+                margin-left: 50px;
+            }
+        }
+    }
+}

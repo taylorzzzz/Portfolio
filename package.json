@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio for Taylor Ward",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -wr"
+  },
+  "author": "Taylor Ward",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "scrollmagic": "^2.0.5"
+  }
+}
