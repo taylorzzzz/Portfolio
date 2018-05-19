@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
 *,
 *::after,
 *::before {
@@ -9,10 +10,14 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Arimo', sans-serif;
+  background: #171717; }
+
+body {
+  font-family: 'Abril Fatface', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
-  line-height: 1.7; }
+  line-height: 1.7;
+  color: #FFF; }
 
 a {
   text-decoration: none;
@@ -23,6 +28,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   font-size: inherit; }
 
+.project .project__title {
+  font-size: 360px;
+  font-weight: 800;
+  width: 100%; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,10 +41,73 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   font-size: 1.4rem;
   height: 50px;
-  position: relative;
+  position: fixed;
   z-index: 100; }
   .header__nav ul {
     list-style: none;
     display: flex; }
     .header__nav ul li {
       margin-left: 50px; }
+
+.project {
+  width: 100vw;
+  height: 100vh;
+  position: relative; }
+  .project .project__title {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    position: fixed;
+    top: 0;
+    text-shadow: 5px 5px 22px rgba(23, 23, 23, 0.5);
+    word-wrap: break-word; }
+    .project .project__title--back {
+      animation: 5s text-fade-in;
+      animation-delay: 3s;
+      animation-fill-mode: both;
+      z-index: 100; }
+    .project .project__title--front {
+      animation: 5s text-fade-out;
+      animation-delay: 3s;
+      animation-fill-mode: both;
+      z-index: 300; }
+  .project .project__img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 20px 30px 3px rgba(23, 23, 23, 0.25); }
+    .project .project__img--1 {
+      height: 70%;
+      top: 50%;
+      z-index: 200; }
+    .project .project__img--2 {
+      top: 0;
+      z-index: 200;
+      width: 50%; }
+    .project .project__img-container {
+      border: solid;
+      min-height: 100vh;
+      position: relative; }
+  .project .project__circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 200px;
+    background: white;
+    top: 500px;
+    left: 300px;
+    position: absolute;
+    box-shadow: 0px 0px 30px 20px  white;
+    animation: 1s pulse ease-in-out infinite;
+    animation-direction: alternate; }
+
+@keyframes text-fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes text-fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }

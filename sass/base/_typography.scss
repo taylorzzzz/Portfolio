@@ -1,8 +1,13 @@
+
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+
 body {
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Abril Fatface', sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.7;
+    color: $color-white;
 }
 
 a {
@@ -14,4 +19,14 @@ a {
 h1,h2,h3,h4,h5,h6 {
     font-weight: inherit;
     font-size: inherit;
+}
+
+.project {
+
+    .project__title {
+        font-size: 360px;
+        font-weight: 800;
+        //color: lighten($color-black, 5%);
+        width: 100%;
+    }
 }
