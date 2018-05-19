@@ -15,32 +15,35 @@
         
 
         &--back {
-            animation: 5s text-fade-in;
+            animation: 3s text-fade-in;
             animation-delay: 3s;
             animation-fill-mode: both;
             z-index: 100;
         }
 
         &--front {
-            animation: 5s text-fade-out;
+
+            animation: 3s text-fade-out;
             animation-delay: 3s;
             animation-fill-mode: both;
             z-index: 300;
+
         }
     }
 
     .project__img {
 
         position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        right: 10%;
+        //transform: translateX(-50%);
         box-shadow: 0px 20px 30px 3px rgba($color-black, .25);
 
         &--1 {  
 
-            height: 70%;
+            width: 70%;
             top: 50%;
             z-index: 200;
+            //transform: translateY(-50%);
             
         }
 
@@ -48,41 +51,95 @@
 
             top: 0;
             z-index: 200;
-            width: 50%;
+            height: 100%;
             
         }
 
         &-container {
 
-            border: solid;
             min-height: 100vh;
             position: relative;
-            
+
         }
         
     }
 
-    .project__circle {
-        width: 10px;
-        height: 10px;
-        border-radius: 200px;
-        background: white;
-        top: 500px;
-        left: 300px;
-        position: absolute;
-        box-shadow: 0px 0px 30px 20px  white;
-        animation: 1s pulse ease-in-out infinite;
-        animation-direction: alternate;
+    .project__info-card {
+
+        position: fixed;
+        bottom: 0px;
+        top: 0;
+        left: 0;
+        width: 300px;
+        z-index: 200;
+        padding: 20px;
+        background-color: rgba($color-white, 1);
+        background-image: url(/images/45-degree-fabric-light.png);
+        background-size: cover;
+        color: $color-black;
+        //box-shadow: 0px 10px 16px rgba($color-black,.5);
         
+        &--title {
+
+            font-size: 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+
+        }
+
+        &--summary {
+
+            padding-left: 20px;
+            font-size: 14px; 
+
+            &-heading {
+
+                font-weight: 800;
+                margin-top: 20px;
+                
+            }
+
+            p {
+
+                font-weight: 300;
+                color: lighten($color-black, 30%);
+
+            }
+
+            ul {
+
+                list-style: none;
+                padding: none;
+                
+                li {
+
+                    color: lighten($color-black, 30%);
+
+                }
+            }
+            
+        }
+
+        &--tools {
+
+
+        }
     }
+
 }
+
+
+
+
+
+
 
 @keyframes text-fade-in {
     0% {
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: .1;
     }
 }
 

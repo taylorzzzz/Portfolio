@@ -1,5 +1,5 @@
 
-@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface|Heebo);
 
 
 body {
@@ -28,5 +28,9 @@ h1,h2,h3,h4,h5,h6 {
         font-weight: 800;
         //color: lighten($color-black, 5%);
         width: 100%;
+    }
+
+    .project__info-card {
+        font-family: "Heebo", serif;
     }
 }
