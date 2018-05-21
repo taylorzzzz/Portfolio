@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
   background-image: url(/images/billie-holiday.png);
   color: rgba(23, 23, 23, 0.9);
-  overflow-y: scroll;
+  overflow-y: auto;
   transform: translate3d(-200%, 0, 0);
   clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px); }
   .info-panel.show {
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: .3s slide-out ease-in forwards; }
   .info-panel__title {
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase; }
   .info-panel__summary {
     padding-left: 20px;
@@ -123,6 +123,19 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 12px;
         display: inline-block;
         color: inherit; }
+  .info-panel__num {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    color: rgba(23, 23, 23, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid;
+    border-radius: 50%; }
   .info-panel--one {
     background-color: #CC3121; }
   .info-panel--two {
@@ -186,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0%;
     left: 350px;
     right: 0;
-    font-size: 150px;
+    font-size: 180px;
     color: rgba(23, 23, 23, 0.25);
     font-weight: 900;
     z-index: -1;
