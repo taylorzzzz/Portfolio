@@ -1,0 +1,18 @@
+.hero {
+    background: $color-black;
+    height: 100vh;
+    width: 100vw;
+    padding-left: 300px;
+
+    h1 {
+        font-size: 60px;
+        color: $color-white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0) rotate(90deg);
+        text-align: center;
+        width: 400px;
+        border: solid;
+    }
+}
