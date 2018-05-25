@@ -7,7 +7,7 @@
     width: 100%;
     padding: 0px 10px;
     //background-image: url(/images/billie-holiday.png);
-    background-color: rgba($color-white, 1);
+    background-color: darken($color-white, 5%);
     color: rgba($color-black, .9);
     overflow-y: hidden;
     transform: translate3d(-200%, 0, 0);
