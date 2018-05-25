@@ -174,8 +174,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   width: 100%;
   padding: 0px 10px;
-  background-image: url(/images/billie-holiday.png);
-  background-color: #CC3121;
+  background-color: white;
   color: rgba(23, 23, 23, 0.9);
   overflow-y: hidden;
   transform: translate3d(-200%, 0, 0);
@@ -237,12 +236,11 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 768px) {
   .info-panel {
     width: 250px;
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     top: 0;
     max-height: 800px;
-    overflow-y: auto;
-    clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px); }
+    overflow-y: auto; }
     .info-panel__expand-button {
       visibility: hidden; } }
 
