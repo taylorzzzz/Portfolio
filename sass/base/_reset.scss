@@ -11,5 +11,10 @@ html {
 }
 
 body {
+
+  
   background: $color-background;
+  background-image: url(/images/Untitled-1.png);
+  //background-blend-mode: overlay;
+  background-size: cover;
 }

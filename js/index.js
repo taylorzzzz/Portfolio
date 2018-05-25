@@ -12,7 +12,7 @@
 
     let currentProject = -1;
 
-    const moreInfo = document.querySelectorAll('.info-panel__expand');
+    const moreInfo = document.querySelectorAll('.info-panel__expand-button');
 
     addMultipleEventListeners(moreInfo, 'click', (event, i) => {
 
@@ -70,7 +70,7 @@
             currentProject--;
 
             if (currentProject !== -1) show(projectBGs[currentProject]);
-            
+
         }
 
     }

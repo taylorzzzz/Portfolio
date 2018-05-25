@@ -1,22 +1,23 @@
 .info-panel {
     margin: 0px;
     position: fixed;
-    width: 100%;
     top: calc(100vh - 50px);
+    left: 0;
     bottom: 0;
+    width: 100%;
     padding: 0px 10px;
     background-image: url(/images/billie-holiday.png);
+    background-color: $color-primary;
     color: rgba($color-black, .9);
     overflow-y: hidden;
     transform: translate3d(-200%, 0, 0);
-    //clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px);
     transition: all .5s ease-in;
 
-    &__expand {
+    &__expand-button {
 
         position: absolute;
         top: 10px;
-        right: 50px;
+        right: 20px;
         color: $color-black;
         opacity: .5;
         cursor: pointer;
@@ -121,37 +122,6 @@
         
     }
 
-    &__num {
-
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 20px;
-        height: 20px;
-        font-size: 16px;
-        color: rgba($color-black, .5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: .5px solid;
-        border-radius: 50%;
-
-    }
-
-    &--one {
-        background-color: $color-primary;
-    }
-
-    &--two {
-        background-color: $color-primary;
-        //width: 295px;
-    }
-
-    &--three {
-        background-color: $color-primary;
-        //width: 290px;
-    }
-
 }
 
 
@@ -162,18 +132,13 @@
 
         width: 250px;
         margin: 10px;
-        position: fixed;
+        padding: 10px;
         top: 0;
-        left: 0;
-        bottom: 0;
-        padding: 20px;
-        background-image: url(/images/billie-holiday.png);
-        color: rgba($color-black, .9);
+        max-height: 800px;
         overflow-y: auto;
-        transform: translate3d(-200%, 0, 0);
         clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px);
 
-        &__expand {
+        &__expand-button {
             visibility: hidden;
         }
 

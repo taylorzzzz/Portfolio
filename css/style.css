@@ -10,7 +10,9 @@ html {
   font-size: 62.5%; }
 
 body {
-  background: #949494; }
+  background: #949494;
+  background-image: url(/images/Untitled-1.png);
+  background-size: cover; }
 
 body {
   font-family: 'Merriweather', sans-serif;
@@ -75,10 +77,9 @@ h1, h2, h3, h4, h5, h6 {
     float: left; }
 
 .bg__text {
-  color: blue;
   position: fixed;
   top: 0%;
-  left: 350px;
+  left: 0px;
   right: 0;
   font-size: 180px;
   color: rgba(23, 23, 23, 0.05);
@@ -96,6 +97,11 @@ h1, h2, h3, h4, h5, h6 {
   .bg__text.hide {
     opacity: 0; }
 
+/* Ipad */
+@media screen and (min-width: 768px) {
+  .bg__text {
+    left: 350px; } }
+
 .container {
   height: 100vh;
   perspective: 1px;
@@ -105,10 +111,10 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: scroll; }
 
 .hero {
-  background: #171717;
   height: 100vh;
   width: 100vw;
-  padding-left: 0px; }
+  overflow: hidden;
+  position: relative; }
   .hero h1 {
     font-size: 60px;
     color: #ffffff;
@@ -119,20 +125,29 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 400px;
     border: solid; }
-  .hero__projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  .hero__strip {
     position: absolute;
-    top: 20%;
-    left: 0%;
-    color: rgba(23, 23, 23, 0.5);
-    font-family: serif; }
-  .hero__project {
-    border-bottom: 10px solid #CC3121;
-    color: #CC3121;
-    transform-origin: top left;
-    font-size: 18px; }
+    top: 20px;
+    left: 20px;
+    border: 0.5px solid #ffffff; }
+    .hero__strip div {
+      width: 50px;
+      height: 50px;
+      opacity: 1;
+      background: #ffffff; }
+  .hero__bg {
+    position: absolute;
+    background: #171717;
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    animation: 10s float alternate infinite;
+    z-index: -1; }
+
+@keyframes float {
+  0% { }
+  100% {
+    transform: scale(1.1); } }
 
 .header {
   font-weight: 300;
@@ -154,24 +169,26 @@ h1, h2, h3, h4, h5, h6 {
 .info-panel {
   margin: 0px;
   position: fixed;
-  width: 100%;
   top: calc(100vh - 50px);
+  left: 0;
   bottom: 0;
+  width: 100%;
   padding: 0px 10px;
   background-image: url(/images/billie-holiday.png);
+  background-color: #CC3121;
   color: rgba(23, 23, 23, 0.9);
   overflow-y: hidden;
   transform: translate3d(-200%, 0, 0);
   transition: all .5s ease-in; }
-  .info-panel__expand {
+  .info-panel__expand-button {
     position: absolute;
     top: 10px;
-    right: 50px;
+    right: 20px;
     color: #171717;
     opacity: .5;
     cursor: pointer;
     transition: .3s opacity; }
-    .info-panel__expand:hover {
+    .info-panel__expand-button:hover {
       opacity: 1; }
   .info-panel.expanded {
     top: 100px;
@@ -215,42 +232,18 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 12px;
         display: inline-block;
         color: inherit; }
-  .info-panel__num {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    font-size: 16px;
-    color: rgba(23, 23, 23, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: .5px solid;
-    border-radius: 50%; }
-  .info-panel--one {
-    background-color: #CC3121; }
-  .info-panel--two {
-    background-color: #CC3121; }
-  .info-panel--three {
-    background-color: #CC3121; }
 
 /* Ipad  *************/
 @media screen and (min-width: 768px) {
   .info-panel {
     width: 250px;
     margin: 10px;
-    position: fixed;
+    padding: 10px;
     top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 20px;
-    background-image: url(/images/billie-holiday.png);
-    color: rgba(23, 23, 23, 0.9);
+    max-height: 800px;
     overflow-y: auto;
-    transform: translate3d(-200%, 0, 0);
     clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px); }
-    .info-panel__expand {
+    .info-panel__expand-button {
       visibility: hidden; } }
 
 /* Desktop and laptop  *************/
@@ -301,8 +294,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
     max-width: 100%;
     margin: 200px auto;
-    z-index: 1;
-    box-shadow: 0px 10px 30px -3px rgba(23, 23, 23, 0.55); }
+    z-index: 1; }
     .project .project__img-container {
       min-height: 100vh;
       position: relative; }

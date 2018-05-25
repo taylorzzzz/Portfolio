@@ -21,10 +21,9 @@
     }
 
     &__text {
-        color: blue;
         position: fixed;
         top: 0%;
-        left: 350px;
+        left: 0px;
         right: 0;
         font-size: 180px;
         color: rgba($color-black, .05);
@@ -45,5 +44,13 @@
         &.hide {
             opacity: 0;
         }
+    }
+}
+
+/* Ipad */
+@media screen and (min-width: 768px) {
+
+    .bg__text {
+        left: 350px;
     }
 }
