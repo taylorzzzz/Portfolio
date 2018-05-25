@@ -1,0 +1,9 @@
+.about__link {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

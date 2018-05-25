@@ -1,13 +1,12 @@
+
 .project {
+
     width: 100%;
     position: relative;
     display: block;
-    // the border allows the trigger positions to work
-    // properly because otherwise this section's top is
-    // placed inside/under margin-top
+    transition: background .5s ease-out;
 
     .project__container {
-        margin-left: 310px;
         padding: 10px 0;
     }
 
@@ -16,9 +15,9 @@
         display: block;
         max-height: 100vh;
         width: auto;
-        max-width: 90%;
+        max-width: 100%;
         margin: 200px auto;
-        z-index: 100;
+        z-index: 1;
         box-shadow: 0px 10px 30px -3px rgba($color-black, .55);
 
         &-container {
@@ -27,55 +26,79 @@
             position: relative;
 
         }
+
+        &--slowest-scroll {
+            transform: translateZ(-.2px) scale(1.2);
+            z-index: 10;
+        }
+        &--slower-scroll {
+            transform: translateZ(-.1px) scale(1.1);
+            z-index: 20;
+        }
+        &--normal-scroll {
+            transform: translateZ(0);
+            z-index: 30;
+        }
         
     }
 
     .project__image-row {
         display: flex;
         justify-content: space-around;
-    }
 
-    .project__background {
-        position: fixed;
-        top: 0%;
-        left: 350px;
-        right: 0;
-        font-size: 180px;
-        //color: $color-background;
-        color: rgba($color-black, .25);
-        font-weight: 900;
-        z-index: -1;
-        //text-shadow: 0px 0px 1px rgba($color-black, 1);
-        letter-spacing: .5em;
-        overflow-wrap: break-word;
-        line-height: 1em;
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-transform: uppercase;
-        
-        &.show {
-            opacity: 1;
+        .project__img {
+            margin: 0;
         }
-
-        &.hide {
-            opacity: 0;
-        }
-        
-    }
-
-    .project__rect {
-        position: fixed;
-        //background: rgba($color-white, .2);
-        z-index: -1;
-        top: 20%;
-        bottom: 10%;
-        left: 40%;
-        right: 0;
-        //box-shadow: 0px 20px 30px 3px rgba($color-black, .55);
     }
 
 }
+
+
+/* Ipad */
+@media screen and (min-width: 768px) {
+
+    .project {
+
+        .project__container {
+
+            margin-left: 260px;
+            padding: 10px 0;
+
+        }
+
+        &__img {
+
+            max-width: 80%;
+
+        }
+
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+    .project {
+
+        .project__container {
+
+            margin-left: 310px;
+            padding: 10px 0;
+
+        }
+        
+        &__img {
+
+            max-width: 90%;
+
+        }
+    }
+
+}
+
+
+
 
 
 

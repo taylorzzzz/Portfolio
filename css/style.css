@@ -40,10 +40,75 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 22px; }
 
 .hero {
+  font-family: "Heebo", sans-serif; }
+
+.about__link {
+  font-weight: 300;
+  color: #171717;
+  opacity: 1;
+  font-size: 12px;
+  font-family: "Heebo", sans-serif;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  mix-blend-mode: differencea; }
+
+.about__link {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer; }
+
+.bg__lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; }
+  .bg__lines .bg__line {
+    width: 20%;
+    height: 100vh;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+    float: left; }
+
+.bg__text {
+  color: blue;
+  position: fixed;
+  top: 0%;
+  left: 350px;
+  right: 0;
+  font-size: 180px;
+  color: rgba(23, 23, 23, 0.05);
+  font-weight: 900;
+  z-index: -1;
+  letter-spacing: .5em;
+  overflow-wrap: break-word;
+  line-height: 1em;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase; }
+  .bg__text.show {
+    opacity: 1; }
+  .bg__text.hide {
+    opacity: 0; }
+
+.container {
+  height: 100vh;
+  perspective: 1px;
+  perspective-origin: 50% 100%;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+.hero {
   background: #171717;
   height: 100vh;
   width: 100vw;
-  padding-left: 300px; }
+  padding-left: 0px; }
   .hero h1 {
     font-size: 60px;
     color: #ffffff;
@@ -54,6 +119,20 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 400px;
     border: solid; }
+  .hero__projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    color: rgba(23, 23, 23, 0.5);
+    font-family: serif; }
+  .hero__project {
+    border-bottom: 10px solid #CC3121;
+    color: #CC3121;
+    transform-origin: top left;
+    font-size: 18px; }
 
 .header {
   font-weight: 300;
@@ -73,18 +152,31 @@ h1, h2, h3, h4, h5, h6 {
       line-height: 1em; }
 
 .info-panel {
-  margin: 10px;
+  margin: 0px;
   position: fixed;
-  width: 300px;
-  top: 0;
-  left: 0;
+  width: 100%;
+  top: calc(100vh - 50px);
   bottom: 0;
-  padding: 20px;
+  padding: 0px 10px;
   background-image: url(/images/billie-holiday.png);
   color: rgba(23, 23, 23, 0.9);
-  overflow-y: auto;
+  overflow-y: hidden;
   transform: translate3d(-200%, 0, 0);
-  clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px); }
+  transition: all .5s ease-in; }
+  .info-panel__expand {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: #171717;
+    opacity: .5;
+    cursor: pointer;
+    transition: .3s opacity; }
+    .info-panel__expand:hover {
+      opacity: 1; }
+  .info-panel.expanded {
+    top: 100px;
+    overflow-y: auto;
+    opacity: .99; }
   .info-panel.show {
     animation: .3s slide-in ease-in forwards; }
   .info-panel.hide {
@@ -143,6 +235,29 @@ h1, h2, h3, h4, h5, h6 {
   .info-panel--three {
     background-color: #CC3121; }
 
+/* Ipad  *************/
+@media screen and (min-width: 768px) {
+  .info-panel {
+    width: 250px;
+    margin: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    background-image: url(/images/billie-holiday.png);
+    color: rgba(23, 23, 23, 0.9);
+    overflow-y: auto;
+    transform: translate3d(-200%, 0, 0);
+    clip-path: polygon(20px 0%, 100% 0%, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0% 100%, 0% 20px); }
+    .info-panel__expand {
+      visibility: hidden; } }
+
+/* Desktop and laptop  *************/
+@media screen and (min-width: 1224px) {
+  .info-panel {
+    width: 300px; } }
+
 @keyframes button-on-hover {
   0% {
     transform: translate3d(0, 0, 0); }
@@ -176,51 +291,51 @@ h1, h2, h3, h4, h5, h6 {
 .project {
   width: 100%;
   position: relative;
-  display: block; }
+  display: block;
+  transition: background .5s ease-out; }
   .project .project__container {
-    margin-left: 310px;
     padding: 10px 0; }
   .project .project__img {
     display: block;
     max-height: 100vh;
     width: auto;
-    max-width: 90%;
+    max-width: 100%;
     margin: 200px auto;
-    z-index: 100;
+    z-index: 1;
     box-shadow: 0px 10px 30px -3px rgba(23, 23, 23, 0.55); }
     .project .project__img-container {
       min-height: 100vh;
       position: relative; }
+    .project .project__img--slowest-scroll {
+      transform: translateZ(-0.2px) scale(1.2);
+      z-index: 10; }
+    .project .project__img--slower-scroll {
+      transform: translateZ(-0.1px) scale(1.1);
+      z-index: 20; }
+    .project .project__img--normal-scroll {
+      transform: translateZ(0);
+      z-index: 30; }
   .project .project__image-row {
     display: flex;
     justify-content: space-around; }
-  .project .project__background {
-    position: fixed;
-    top: 0%;
-    left: 350px;
-    right: 0;
-    font-size: 180px;
-    color: rgba(23, 23, 23, 0.25);
-    font-weight: 900;
-    z-index: -1;
-    letter-spacing: .5em;
-    overflow-wrap: break-word;
-    line-height: 1em;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: uppercase; }
-    .project .project__background.show {
-      opacity: 1; }
-    .project .project__background.hide {
-      opacity: 0; }
-  .project .project__rect {
-    position: fixed;
-    z-index: -1;
-    top: 20%;
-    bottom: 10%;
-    left: 40%;
-    right: 0; }
+    .project .project__image-row .project__img {
+      margin: 0; }
+
+/* Ipad */
+@media screen and (min-width: 768px) {
+  .project .project__container {
+    margin-left: 260px;
+    padding: 10px 0; }
+  .project__img {
+    max-width: 80%; } }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  .project .project__container {
+    margin-left: 310px;
+    padding: 10px 0; }
+  .project__img {
+    max-width: 90%; } }
 
 @keyframes text-fade-in {
   0% {

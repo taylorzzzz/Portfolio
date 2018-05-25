@@ -8,58 +8,64 @@
 
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 
+        <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+
         <link rel="stylesheet" href="css/style.css">
 
     </head>
 
     <body>
 
-        <header class="header">
+        <div class="bg__lines">
+            <div class="bg__line"></div>
+            <div class="bg__line"></div>
+            <div class="bg__line"></div>
+            <div class="bg__line"></div>
+        </div>
 
-            <h1 class="header__name">
+        <div class="bg__text">Songnapper</div>
+        <div class="bg__text">Ways of Seeing</div>
+        <div class="bg__text">Mary Grinyer</div>
 
-                <div class="header__name--first">
-
-                    Taylor
-
-                </div>
-
-                <div class="header__name--last">
-
-                    Ward
-
-                </div>
-                 
-            </h1>
-
-        </header>
-
-
-        <main>
+        <div class="container">
 
             <section class="hero">
+
                 <h1>Scroll Down to View Projects</h1>
 
                 <div class="hero__projects">
                     
-                    <div class="hero__projects--one"></div>
+                    <div class="hero__project hero__projects--one">
+
+                        Songnapper
+
+                    </div>
+
+                    <div class="hero__project hero__projects--two">
+
+                        Ways of Seeing
+
+                    </div>
+
+                    <div class="hero__project hero__projects--three">
+
+                        Mary Grinyer
+
+                    </div>
+
                 </div>
 
             </section>
             
             <section class="project project--one">
-                
-                <div class="project__background">
-                    Songnapper
-                </div>
 
                 <div class="project__container">
                 
-                    <img src="images/sn1.png" class="project__img project__img--1"/>
+                    <img src="images/sn1.png" class="project__img project__img--slowest-scroll"/>
 
-                    <img src="images/sn2.png" class="project__img project__img--2"/>
+                    <img src="images/sn2.png" class="project__img project__img--normal-scroll"/>
 
-                    <img src="images/sn3.png" class="project__img project__img--3"/>
+                    <img src="images/sn3.png" class="project__img project__img--slower-scroll"/>
                 </div>
 
 
@@ -67,22 +73,31 @@
 
             <section class="project project--two">
 
-                <div class="project__background">
-                    WaysOfSeeing
-                </div>
-
-                <div class="project__rect"></div>
-
                 <div class="project__container">
                     
-                    <img src="images/wos1.png" class="project__img project__img--1"/>
+                    <img src="images/wos1.png" class="project__img project__img--1 project__img--slowest-scroll"/>
 
                     <div class="project__image-row">
                         
-                        <img src="images/wos-qtr-1.png" class="project__img" style="height:300px"/>
-                        <img src="images/wos-qtr-2.png" class="project__img" style="height:300px"/>
-                        <img src="images/wos-qtr-3.png" class="project__img" style="height:300px"/>
-                        <img src="images/wos-qtr-4.png" class="project__img" style="height:300px"/>
+                        <img 
+                            src="images/wos-qtr-1.png" 
+                            class="project__img project__img--slowest-scroll"
+                            style="height:300px"/>
+
+                        <img 
+                            src="images/wos-qtr-2.png" 
+                            class="project__img project__img--slower-scroll" 
+                            style="height:300px"/>
+
+                        <img 
+                            src="images/wos-qtr-3.png" 
+                            class="project__img project__img--normal-scroll" 
+                            style="height:300px"/>
+
+                        <img 
+                            src="images/wos-qtr-4.png" 
+                            class="project__img project__img--slower-scroll" 
+                            style="height:300px"/>
                         
                     </div>
                 
@@ -92,177 +107,210 @@
             </section>
 
             <section class="project project--three">
-                
-                <div class="project__background">
-                    MaryGrinyer
-                </div>
 
                 <div class="project__container">
     
-                    <img src="images/mg1.png" class="project__img project__img--1"/>
+                    <img 
+                        src="images/mg1.png" 
+                        class="project__img project__img--slower-scroll"/>
 
-                    <img src="images/mg2.png" class="project__img project__img--2"/>
+                    <img 
+                        src="images/mg2.png" 
+                        class="project__img project__img--normal-scroll"/>
 
-                    <img src="images/mg3.png" class="project__img project__img--3"/>
+                    <img 
+                        src="images/mg3.png" 
+                        class="project__img project__img--normal-scroll"/>
 
                 </div>
 
             </section>
 
+        </div>
 
-            <div class="info-panel info-panel--one">
+        <header class="header">
 
-                <div class="info-panel__title">
+                <h1 class="header__name">
 
-                    Songnapper
+                    <div class="header__name--first">
 
-                </div>
+                        Taylor
 
-                <div class="info-panel__summary">
+                    </div>
 
-                    <div class="info-panel__summary--heading">Summary</div>
+                    <div class="header__name--last">
 
-                    <p class="info-panel__summary--content">
-                        A user created database of connections between similar sounding songs. Each connection has at least one type specifying the nature of the connection – for instance a bassline for songs with similar sounding basslines. Connections can be rated, browsed and commented on by the community.
-                    </p>
-
-                    <div class="info-panel__summary--heading">Tools</div>
-
-                    <ul class="info-panel__summary--tools">
-                        
-                        <li class="info-panel__summary--tool">React</li>
-                        <li class="info-panel__summary--tool">CSS</li>
-                        <li class="info-panel__summary--tool">MongoDB</li>
-                        <li class="info-panel__summary--tool">Node/Express</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="info-panel__links">
-
-                    <div class="info-panel__links--link">
-
-                        <a href="#">Live Site</a>
+                        Ward
 
                     </div>
                     
-                    <div class="info-panel__links--link">
-                        
-                        <a href="#">Source Code</a>
-                    
-                    </div>
+                </h1>
 
-                </div>
+        </header>
 
-                <div class="info-panel__num">1</div>
+        <div class="info-panel info-panel--one">
+
+            <div class="info-panel__title">
+
+                Songnapper
 
             </div>
 
-            <div class="info-panel info-panel--two">
+            <div class="info-panel__summary">
+
+                <div class="info-panel__summary--heading">Summary</div>
+
+                <p class="info-panel__summary--content">
+                    A user created database of connections between similar sounding songs. Each connection has at least one type specifying the nature of the connection – for instance a bassline for songs with similar sounding basslines. Connections can be rated, browsed and commented on by the community.
+                </p>
+
+                <div class="info-panel__summary--heading">Tools</div>
+
+                <ul class="info-panel__summary--tools">
+                    
+                    <li class="info-panel__summary--tool">React</li>
+                    <li class="info-panel__summary--tool">CSS</li>
+                    <li class="info-panel__summary--tool">MongoDB</li>
+                    <li class="info-panel__summary--tool">Node/Express</li>
+
+                </ul>
+
+            </div>
+
+            <div class="info-panel__links">
+
+                <div class="info-panel__links--link">
+
+                    <a href="#">Live Site</a>
+
+                </div>
                 
-
-                <div class="info-panel__title">
-
-                    Ways of Seeing
-
-                </div>
-
-                <div class="info-panel__summary">
-
-                    <div class="info-panel__summary--heading">Summary</div>
-
-                    <p class="info-panel__summary--content">
-                        Ways of Seeing (1971) by John Berger is certainly one of the most influential books on art ever written, but it is not necessarily the most pleasing to the eye. Budget constraints meant that all 155 images including those that make up the "pictoral essays" were printed in black and white. 
-                        <br>
-                        I first read the book in college and turned, like I'm sure did many others, to one of the widely available roughly scanned PDF files. This HTML version of the book is my attempt to provide a more readable alternative. 
-                    </p>
-
-                    <div class="info-panel__summary--heading">Tools</div>
-
-                    <ul class="info-panel__summary--tools">
-                        
-                        <li class="info-panel__summary--tool">JS</li>
-                        <li class="info-panel__summary--tool">CSS</li>
-                        <li class="info-panel__summary--tool">Python</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="info-panel__links">
-
-                    <div class="info-panel__links--link">
-
-                        <a href="#">Live Site</a>
-
-                    </div>
+                <div class="info-panel__links--link">
                     
-                    <div class="info-panel__links--link">
-                        
-                        <a href="#">Source Code</a>
-                    
-                    </div>
-
+                    <a href="#">Source Code</a>
+                
                 </div>
-
-                <div class="info-panel__num">2</div>
 
             </div>
 
-            <div class="info-panel info-panel--three">
+            <div class="info-panel__num">1</div>
 
-                <div class="info-panel__title">
+            <div class="info-panel__expand">more info</div>
 
-                    Mary Grinyer
+        </div>
 
-                </div>
+        <div class="info-panel info-panel--two">
+            
 
-                <div class="info-panel__summary">
+            <div class="info-panel__title">
 
-                    <div class="info-panel__summary--heading">Summary</div>
-
-                    <p class="info-panel__summary--content">
-                        Mary Grinyer is an Artist living in Riverside, California. This portfolio site highlights her work in ceramics as well as other sculpted pieces.
-                    </p>
-
-                    <div class="info-panel__summary--heading">Tools</div>
-
-                    <ul class="info-panel__summary--tools">
-                        
-                        <li class="info-panel__summary--tool">JS</li>
-                        <li class="info-panel__summary--tool">Custom CSS</li>
-                        <li class="info-panel__summary--tool">PHP</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="info-panel__links">
-
-                    <div class="info-panel__links--link">
-
-                        <a href="#">Live Site</a>
-
-                    </div>
-                    
-                    <div class="info-panel__links--link">
-                        
-                        <a href="#">Source Code</a>
-                    
-                    </div>
-
-                </div>
-
-                <div class="info-panel__num">3</div>
+                Ways of Seeing
 
             </div>
 
-        </main>
-        
+            <div class="info-panel__summary">
 
+                <div class="info-panel__summary--heading">Summary</div>
 
+                <p class="info-panel__summary--content">
+                    Ways of Seeing (1971) by John Berger is certainly one of the most influential books on art ever written, but it is not necessarily the most pleasing to the eye. Budget constraints meant that all 155 images including those that make up the "pictoral essays" were printed in black and white. 
+                    <br>
+                    I first read the book in college and turned, like I'm sure did many others, to one of the widely available roughly scanned PDF files. This HTML version of the book is my attempt to provide a more readable alternative. 
+                </p>
 
+                <div class="info-panel__summary--heading">Tools</div>
+
+                <ul class="info-panel__summary--tools">
+                    
+                    <li class="info-panel__summary--tool">JS</li>
+                    <li class="info-panel__summary--tool">CSS</li>
+                    <li class="info-panel__summary--tool">Python</li>
+
+                </ul>
+
+            </div>
+
+            <div class="info-panel__links">
+
+                <div class="info-panel__links--link">
+
+                    <a href="#">Live Site</a>
+
+                </div>
+                
+                <div class="info-panel__links--link">
+                    
+                    <a href="#">Source Code</a>
+                
+                </div>
+
+            </div>
+
+            <div class="info-panel__num">2</div>
+
+            <div class="info-panel__expand">more info</div>
+
+        </div>
+
+        <div class="info-panel info-panel--three">
+
+            <div class="info-panel__title">
+
+                Mary Grinyer
+
+            </div>
+
+            <div class="info-panel__summary">
+
+                <div class="info-panel__summary--heading">Summary</div>
+
+                <p class="info-panel__summary--content">
+                    Mary Grinyer is an Artist living in Riverside, California. This portfolio site highlights her work in ceramics as well as other sculpted pieces.
+                </p>
+
+                <div class="info-panel__summary--heading">Tools</div>
+
+                <ul class="info-panel__summary--tools">
+                    
+                    <li class="info-panel__summary--tool">JS</li>
+                    <li class="info-panel__summary--tool">Custom CSS</li>
+                    <li class="info-panel__summary--tool">PHP</li>
+
+                </ul>
+
+            </div>
+
+            <div class="info-panel__links">
+
+                <div class="info-panel__links--link">
+
+                    <a href="#">Live Site</a>
+
+                </div>
+                
+                <div class="info-panel__links--link">
+                    
+                    <a href="#">Source Code</a>
+                
+                </div>
+
+            </div>
+
+            <div class="info-panel__num">3</div>
+
+            <div class="info-panel__expand">more info</div>
+
+        </div>
+
+        <!--
+            <div class="about__link">
+                <span>A</span>
+                <span>B</span>
+                <span>O</span>
+                <span>U</span>
+                <span>T</span>
+            </div>
+        -->
 
         <script src="./js/index.js"></script>
 
