@@ -5,7 +5,7 @@
     const projects = document.querySelectorAll('.project');
 
     const projectBGs = document.querySelectorAll('.bg__text');
-    
+ 
     const container = document.querySelector('.container');
 
     let waitingForUpdate;
@@ -121,12 +121,12 @@
         if (infoPanels[i].className.indexOf(' expanded') == -1) {
             // then panel is not expanded and we should add the class
             infoPanels[i].classList.add('expanded');
-            moreInfo[i].innerHTML = "less info";
+            //moreInfo[i].innerHTML = "less info";
             
         } else {
 
             infoPanels[i].classList.remove('expanded');
-            moreInfo[i].innerHTML = "more info";
+            //moreInfo[i].innerHTML = "more info";
 
         }
 

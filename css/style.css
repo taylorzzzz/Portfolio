@@ -11,7 +11,7 @@ html {
 
 body {
   background: #949494;
-  background-image: url(/images/Untitled-1.png);
+  background-image: url(/images/Untitled-3.png);
   background-size: cover; }
 
 body {
@@ -124,7 +124,8 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate3d(-50%, -50%, 0) rotate(90deg);
     text-align: center;
     width: 400px;
-    border: solid; }
+    border: solid;
+    display: none; }
   .hero__strip {
     position: absolute;
     top: 20px;
@@ -186,13 +187,36 @@ h1, h2, h3, h4, h5, h6 {
     color: #171717;
     opacity: .5;
     cursor: pointer;
-    transition: .3s opacity; }
+    transition: .3s opacity;
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 50%; }
     .info-panel__expand-button:hover {
       opacity: 1; }
+    .info-panel__expand-button::before, .info-panel__expand-button::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 2px;
+      top: 50%;
+      right: 2px;
+      height: 1px;
+      transform: translate3d(0, -50%, 0);
+      background: #171717;
+      transition: all .4s; }
+    .info-panel__expand-button::after {
+      top: 2px;
+      height: calc(100% - 4px);
+      left: 50%;
+      width: 1px;
+      transform: translate3d(-50%, 0, 0); }
   .info-panel.expanded {
     top: 100px;
     overflow-y: auto;
     opacity: .99; }
+    .info-panel.expanded .info-panel__expand-button::after {
+      height: 0; }
   .info-panel.show {
     animation: .3s slide-in ease-in forwards; }
   .info-panel.hide {
@@ -218,13 +242,16 @@ h1, h2, h3, h4, h5, h6 {
   .info-panel__links {
     display: flex;
     margin-top: 20px;
-    justify-content: space-around; }
+    justify-content: space-around;
+    justify-content: flex-start;
+    padding-left: 20px; }
     .info-panel__links--link {
       border: solid;
       padding: 5px 10px;
       overflow: hidden;
       cursor: pointer;
-      color: rgba(23, 23, 23, 0.5); }
+      color: rgba(23, 23, 23, 0.5);
+      margin-right: 20px; }
       .info-panel__links--link:hover a {
         animation: .4s button-on-hover ease-in-out; }
       .info-panel__links--link a {
@@ -242,7 +269,11 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 800px;
     overflow-y: auto; }
     .info-panel__expand-button {
-      visibility: hidden; } }
+      visibility: hidden; }
+    .info-panel__links {
+      justify-content: space-around; }
+      .info-panel__links--link {
+        margin-right: 0; } }
 
 /* Desktop and laptop  *************/
 @media screen and (min-width: 1224px) {
