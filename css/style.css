@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pirata+One|Merriweather|Heebo);
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Heebo:100,300,900);
 *,
 *::after,
 *::before {
@@ -15,7 +15,6 @@ body {
   background-size: cover; }
 
 body {
-  font-family: 'Merriweather', sans-serif;
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.7; }
@@ -27,7 +26,8 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
-  font-size: inherit; }
+  font-size: inherit;
+  margin: 0; }
 
 .project .project__title {
   font-size: 360px;
