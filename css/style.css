@@ -110,6 +110,14 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: hidden;
   overflow-y: scroll; }
 
+.main-container {
+  position: fixed;
+  height: calc(100% - 40px);
+  width: 100%;
+  margin: 20px 0;
+  box-sizing: border-box;
+  overflow: hidden; }
+
 .hero {
   height: 100vh;
   overflow: hidden;
