@@ -114,41 +114,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  position: relative; }
-  .hero h1 {
-    font-size: 60px;
-    color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) rotate(90deg);
-    text-align: center;
-    width: 400px;
-    border: solid;
-    display: none; }
-  .hero__strip {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    border: 0.5px solid #ffffff; }
-    .hero__strip div {
-      width: 50px;
-      height: 50px;
-      opacity: 1;
-      background: #ffffff; }
-  .hero__bg {
-    position: absolute;
-    background: #171717;
-    background-size: 100%;
-    height: 100%;
-    width: 100%;
-    animation: 10s float alternate infinite;
-    z-index: -1; }
-
-@keyframes float {
-  0% { }
-  100% {
-    transform: scale(1.1); } }
+  position: relative;
+  background: #171717;
+  opacity: .9; }
 
 .header {
   font-weight: 300;
