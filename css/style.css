@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pirata+One|Merriweather|Heebo);
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Heebo:100,300,900);
 *,
 *::after,
 *::before {
@@ -15,7 +15,6 @@ body {
   background-size: cover; }
 
 body {
-  font-family: 'Merriweather', sans-serif;
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.7; }
@@ -82,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0px;
   right: 0;
   font-size: 180px;
-  color: rgba(23, 23, 23, 0.05);
+  color: rgba(255, 255, 255, 0.05);
   font-weight: 900;
   z-index: -1;
   letter-spacing: .5em;
@@ -117,6 +116,26 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   background: #171717;
   opacity: .9; }
+  .hero__text-container {
+    color: #ffffff;
+    position: absolute;
+    top: 10vh;
+    width: 90vh;
+    transform: rotate(90deg) translate3d(0, -100%, 0);
+    transform-origin: top left; }
+    .hero__text-container--name, .hero__text-container--job {
+      margin: 50px 0; }
+      .hero__text-container--name h1, .hero__text-container--name h3, .hero__text-container--job h1, .hero__text-container--job h3 {
+        margin: 0;
+        line-height: 1.1em;
+        text-transform: uppercase; }
+      .hero__text-container--name h1, .hero__text-container--job h1 {
+        font-size: 60px;
+        font-weight: 900; }
+      .hero__text-container--name h3, .hero__text-container--job h3 {
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: .3em; }
 
 .header {
   font-weight: 300;
