@@ -8,3 +8,13 @@
     overflow-y: scroll;
 
 }
+
+.main-container {
+    position: fixed;
+    height: calc(100% - 40px);
+    width: 100%;
+    margin: 20px 0;
+    //border: solid white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
