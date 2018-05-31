@@ -33,9 +33,11 @@
         
     })
 
+    const bg = document.querySelector('.bg__overlay');
+    const BG_SHIFT_AMOUNT = .1;
     function scrollUpdate() {
 
-        waitingForUpdate = false;               // For debouncing the scroll event handler
+        waitingForUpdate = false;    // For debouncing the scroll event handler
 
         const scrollPosition = container.scrollTop;
 
@@ -46,15 +48,17 @@
         const currentHeight = currentProject !== -1    
             ? projects[currentProject].offsetHeight
             : projects[0].offsetTop;
+        
 
         if (scrollPosition > currentTop + currentHeight) {
-            
+
             if (currentProject !== -1) {
 
                 hide(projectBGs[currentProject]);
 
                 infoPanels[currentProject].classList.remove('expanded');
 
+                bg.style.opacity = +bg.style.opacity + BG_SHIFT_AMOUNT;
             }
 
             currentProject++;
@@ -67,12 +71,18 @@
 
             infoPanels[currentProject].classList.remove('expanded');
 
-            currentProject--;
+            currentProject--;            
 
-            if (currentProject !== -1) show(projectBGs[currentProject]);
+            if (currentProject !== -1) {
+
+                show(projectBGs[currentProject]);
+
+                bg.style.opacity = +bg.style.opacity - BG_SHIFT_AMOUNT;
+
+            }
 
         }
-        
+
     }
 
     function addMultipleEventListeners(arr, event, callback) {
