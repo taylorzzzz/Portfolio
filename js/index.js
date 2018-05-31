@@ -72,7 +72,7 @@
             if (currentProject !== -1) show(projectBGs[currentProject]);
 
         }
-
+        
     }
 
     function addMultipleEventListeners(arr, event, callback) {
@@ -133,3 +133,4 @@
     }
 
 })();
+

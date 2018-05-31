@@ -1,24 +1,28 @@
 .bg {
 
-    &__lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    border: red solid;
 
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
+    &__line {
+
+        width: 20%;
         height: 100vh;
-        z-index: -1;
-    
-        .bg__line {
-
-            width: 20%;
-            height: 100vh;
-            border-right: .5px solid rgba($color-white, .1);
-            float: left;
-            
-        }    
+        border-right: .5px solid rgba($color-white, 1);
+        float: left;
         
+    }  
+    
+    &__overlay {
+        border: solid;
+        background: red;
     }
+        
+    
 
     &__text {
         position: fixed;
