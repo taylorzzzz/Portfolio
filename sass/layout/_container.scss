@@ -6,15 +6,13 @@
     transform-style: preserve-3d;
     overflow-x: hidden;
     overflow-y: scroll;
-
 }
 
 .main-container {
     position: fixed;
     height: calc(100% - 40px);
     width: 100%;
-    margin: 20px 0;
-    //border: solid white;
+    margin: $container-margin 0;
     box-sizing: border-box;
     overflow: hidden;
 }
