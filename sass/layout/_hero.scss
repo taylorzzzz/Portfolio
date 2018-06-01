@@ -1,13 +1,108 @@
 .hero {
-    //clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
-    height: 100vh;
-    //width: 100%;
-    //box-shadow: 0px 2px 20px -6px rgba($color-black, .5);
+    
+    height: calc(100vh - 40px);
     overflow: hidden;
     position: relative;
-    background: $color-black;
-    opacity: .9;
+    background: $color-white;
+    opacity: 1;
     box-sizing: border-box;
-    margin: 20px;
+    margin: 0 20px 20px;
+    
+    &__text {
+        color: $color-black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
 
+        &--name {
+            font-weight: 900;
+            font-size: 50px;
+        }
+        
+    }
+
+    svg {
+
+        &.yarn {
+            height: 100vh;
+            stroke: $color-white;
+            stroke-width: .1;
+            fill: none;
+            position: fixed;
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            opacity: 1.1;
+            
+            path {
+                stroke-dasharray: 100;
+                animation: draw 20s linear infinite;
+                transform-origin: center;
+                opacity: .1;
+            }
+        }
+        
+
+        &.scribble {
+            
+            height: 100%;
+            max-height: 400px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            rect {
+                fill: $color-white;
+                stroke: $color-black;
+                animation: 1s scribbleBox infinite;
+            }
+
+            path {
+                stroke-width: 1;
+                stroke: $color-black;
+                opacity: 1;
+                animation: 1s scribble infinite;
+            }
+        }
+        
+        
+        
+    }
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 400;
+        transform:  rotate(360deg);  
+      
+    }
+    to {
+        transform: rotate(0);
+        opacity: .5;
+    }
+}
+
+@keyframes scribbleBox {
+    from {
+        stroke-width: 2;
+    }
+    to {
+        stroke-width: 4;
+    }
+}
+@keyframes scribble {
+    0% {
+        opacity: 1;
+    }
+    
+    33.33% {
+        opacity: 1;
+    }
+    33.34% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }

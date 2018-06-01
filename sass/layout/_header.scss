@@ -12,10 +12,11 @@
             stroke: $color-white;
             fill: none;
             stroke-width: 1;
-            stroke-dasharray: 50;
-            stroke-dashoffset: 50;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
             animation: 2s animate 2s linear forwards;
         }
+        
     }
 
 }
@@ -32,6 +33,7 @@
         stroke-dashoffset: 0;
         fill: rgba($color-white, 1);
         opacity: 1;
+        stroke-width: 0;
     }
  
 }
