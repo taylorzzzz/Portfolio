@@ -150,21 +150,30 @@ h1, h2, h3, h4, h5, h6 {
   margin: 20px; }
 
 .header {
-  font-weight: 300;
-  font-size: 1.4rem;
+  position: absolute;
   top: 20px;
-  right: 20px;
-  position: fixed;
-  z-index: 1000; }
-  .header__name {
-    padding: 10px;
-    display: inline-block;
-    clip-path: polygon(10% 0%, 100% 0%, 100% 90%, 90% 100%, 0% 100%, 0% 10%);
-    background: #ffffff; }
-    .header__name--first, .header__name--last {
-      padding: 0;
-      margin: 0;
-      line-height: 1em; }
+  right: 20px; }
+  .header svg {
+    width: 60px;
+    background: #CC3121; }
+    .header svg text {
+      opacity: 0;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: 2s animate 2s linear forwards; }
+
+@keyframes animate {
+  0% { }
+  80% {
+    fill: rgba(255, 255, 255, 0);
+    opacity: 1; }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white;
+    opacity: 1; } }
 
 .info-panel {
   margin: 0px;
