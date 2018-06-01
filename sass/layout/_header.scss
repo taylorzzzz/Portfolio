@@ -1,8 +1,8 @@
 .header {
     font-weight: 300;
     font-size: 1.4rem;
-    top: 20px;
-    right: 20px;
+    top: $container-margin;
+    right: $container-margin;
     position: fixed;
     z-index: 1000;
 

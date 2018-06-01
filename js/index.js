@@ -1,24 +1,22 @@
 (function() {
 
-    const infoPanels = document.querySelectorAll('.info-panel');
+    const   infoPanels = document.querySelectorAll('.info-panel'),
+            projects = document.querySelectorAll('.project'),
+            projectBGs = document.querySelectorAll('.bg__text'),
+            container = document.querySelector('.container'),
+            moreInfo = document.querySelectorAll('.info-panel__expand-button'),
+            bg = document.querySelector('.bg__overlay'),
+            BG_SHIFT_AMOUNT = .1,
+            scrollMeter = document.querySelector('.bg__scroll-meter circle'),
+            meterLength = 2 * Math.PI * scrollMeter.r.baseVal.value;
 
-    const projects = document.querySelectorAll('.project');
 
-    const projectBGs = document.querySelectorAll('.bg__text');
- 
-    const container = document.querySelector('.container');
+    let waitingForUpdate,
+        currentProject = -1,
+        pageHeight = getPageHeight();
+    
+    setupScrollMeter();
 
-    let waitingForUpdate;
-
-    let currentProject = -1;
-
-    const moreInfo = document.querySelectorAll('.info-panel__expand-button');
-
-    addMultipleEventListeners(moreInfo, 'click', (event, i) => {
-
-        toggleInfoExpansion(event, i);
-
-    })
 
     // Use window.addEventListener & window.pageYOffset if not using parallax
     container.addEventListener('scroll', () => {
@@ -33,8 +31,18 @@
         
     })
 
-    const bg = document.querySelector('.bg__overlay');
-    const BG_SHIFT_AMOUNT = .1;
+    window.addEventListener('resize', resizeUpdate);
+
+    addMultipleEventListeners(moreInfo, 'click', (event, i) => {
+
+        toggleInfoExpansion(event, i);
+
+    })
+
+
+
+
+
     function scrollUpdate() {
 
         waitingForUpdate = false;    // For debouncing the scroll event handler
@@ -82,6 +90,8 @@
             }
 
         }
+
+        updateScrollMeter(scrollPosition);
 
     }
 
@@ -140,6 +150,50 @@
 
         }
 
+    }
+
+    function getPageHeight() {
+
+        // The page is made up of hero + projects
+        let height = document.querySelector('.hero').clientHeight;
+
+        projects.forEach(el => {
+            
+            height += el.clientHeight;
+        })
+
+        // However the page this doesn't take into account certain margins
+        // so an alternative might be to just find bottom of the last project 
+        // which as of right now is the last element on the page
+        const lastProject = projects[projects.length -1];
+
+        height = lastProject.offsetTop + lastProject.clientHeight;
+
+
+        return height;
+
+        
+    }
+
+    function setupScrollMeter() {
+
+        scrollMeter.style.strokeDasharray = meterLength;
+        scrollMeter.style.strokeDashoffset = meterLength;
+
+    }
+
+    function updateScrollMeter(scrollPosition) {
+
+        const totalHeight = pageHeight - container.clientHeight;
+
+        const scrollPercentage = scrollPosition / totalHeight;
+
+        scrollMeter.style.strokeDashoffset = meterLength - (meterLength * scrollPercentage);
+    }
+
+    function resizeUpdate() {
+        pageHeight = getPageHeight();
+        console.log(pageHeight);
     }
 
 })();

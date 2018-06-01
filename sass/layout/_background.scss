@@ -52,6 +52,24 @@
             opacity: 0;
         }
     }
+
+    &__scroll-meter {
+
+        svg {
+            width: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: $container-margin * 2;
+
+            circle {
+                
+                fill: none;
+                stroke: $color-primary;
+                stroke-width: 2;
+            }
+        }
+    }
 }
 
 /* Ipad */
@@ -61,3 +79,4 @@
         left: 350px;
     }
 }
+

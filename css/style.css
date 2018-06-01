@@ -104,6 +104,16 @@ h1, h2, h3, h4, h5, h6 {
       opacity: 1; }
     .bg__text.hide {
       opacity: 0; }
+  .bg__scroll-meter svg {
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px; }
+    .bg__scroll-meter svg circle {
+      fill: none;
+      stroke: #CC3121;
+      stroke-width: 2; }
 
 /* Ipad */
 @media screen and (min-width: 768px) {
