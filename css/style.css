@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Pirata+One|Heebo:100,300,900);
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900);
 *,
 *::after,
 *::before {
@@ -35,21 +35,21 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%; }
 
 .info-panel {
-  font-family: "Heebo", sans-serif; }
+  font-family: "Work Sans", sans-serif; }
 
 .header__name {
   font-family: "Pirata One", serif;
   font-size: 22px; }
 
 .hero {
-  font-family: "Heebo", sans-serif; }
+  font-family: "Work Sans", sans-serif; }
 
 .about__link {
   font-weight: 300;
   color: #171717;
   opacity: 1;
   font-size: 12px;
-  font-family: "Heebo", sans-serif;
+  font-family: "Work Sans", sans-serif;
   letter-spacing: 1em;
   text-transform: uppercase;
   mix-blend-mode: differencea; }
