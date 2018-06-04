@@ -67,7 +67,8 @@
                 infoPanels[currentProject].classList.remove('expanded');
 
                 bg.style.opacity = +bg.style.opacity + BG_SHIFT_AMOUNT;
-            }
+
+            } else { showName() }
 
             currentProject++;
             
@@ -195,7 +196,23 @@
         pageHeight = getPageHeight();
         console.log(pageHeight);
     }
-    
 
+    function showName() {
+
+        const name = document.querySelector('header .name text');
+
+        name.classList.add('show');
+
+    }
+
+    function drawHeroSquiggles() {
+        const squiggles = document.querySelectorAll('.squiggles path');
+
+        squiggles.forEach((el,i) => {
+            const length = el.getTotalLength();
+            
+        })
+    }
+    //drawHeroSquiggles();
 })();
 

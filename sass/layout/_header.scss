@@ -14,7 +14,10 @@
             stroke-width: 1;
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
-            animation: 2s animate 2s linear forwards;
+            
+            &.show {
+                animation: 2s animate linear forwards;
+            }
         }
         
     }

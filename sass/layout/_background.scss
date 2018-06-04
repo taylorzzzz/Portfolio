@@ -64,11 +64,11 @@
     &__scroll-meter {
 
         svg {
-            width: 40px;
+            width: 10px;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: $container-margin * 2;
+            top: 0%;
+            transform: translate(-50%, 50%);
+            right: 50%;
 
             circle {
                 
@@ -78,6 +78,34 @@
             }
         }
     }
+
+    .scribble {
+            
+        height: 50px;
+        position: absolute;
+        transform-origin: top left;
+        right: 20px;
+        bottom: 20px;
+
+        rect {
+            fill: $color-white;
+            stroke: $color-white;
+            animation: 1s scribbleBox infinite alternate;
+        }
+
+        @for $i from 1 through 3 {
+
+            #scribble-#{$i} {
+                stroke-width: 1;
+                stroke: $color-white;
+                opacity: 1;
+                animation: .5s scribble $i * .333s infinite;
+            }
+        }
+        path {
+            
+        }
+    }
 }
 
 /* Ipad */
@@ -85,6 +113,23 @@
 
     .bg__text {
         left: 350px;
+    }
+
+    .bg__scroll-meter {
+        svg {
+            width: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: $container-margin;
+
+            circle {
+                
+                fill: none;
+                stroke: $color-primary;
+                stroke-width: 2;
+            }
+        }
     }
 }
 

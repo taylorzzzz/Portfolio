@@ -3,70 +3,95 @@
     height: calc(100vh - 40px);
     overflow: hidden;
     position: relative;
-    background: $color-white;
     opacity: 1;
     box-sizing: border-box;
     margin: 0 20px 20px;
+    margin-bottom: 200px;
     
     &__text {
-        color: $color-black;
+        text-transform: uppercase;
+        color: $color-white;
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 20%;
+        left: 0%;
 
         &--name {
             font-weight: 900;
-            font-size: 50px;
+            font-size: 90px;
+        }
+        &--job {
+            font-weight: 900;
+            font-size: 90px;
         }
         
     }
 
     svg {
-
-        &.yarn {
-            height: 100vh;
-            stroke: $color-white;
-            stroke-width: .1;
-            fill: none;
-            position: fixed;
-            left: 0%;
-            top: 0%;
-            width: 100%;
-            opacity: 1.1;
+        &.scribbles {
             
-            path {
-                stroke-dasharray: 100;
-                animation: draw 20s linear infinite;
-                transform-origin: center;
-                opacity: .1;
-            }
-        }
-        
-
-        &.scribble {
-            
-            height: 100%;
-            max-height: 400px;
+            height: 150%;
+            //max-height: 100px;
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 20%;
+            top: -10%;
+            fill: none;
+            opacity: 1;
 
-            rect {
-                fill: $color-white;
-                stroke: $color-black;
-                animation: 1s scribbleBox infinite;
+            @for $i from 1 through 3 {
+
+                #scribble-#{$i} {
+                    stroke-width: 1;
+                    
+                    stroke: $color-primary;
+                    opacity: 1;
+                    animation: 1s scribble $i * .333s infinite;
+                }
             }
+            
+        }
+
+        &.squiggles {
+            position: absolute;
+            height: 100%;
+            width: 100%;
 
             path {
-                stroke-width: 1;
-                stroke: $color-black;
-                opacity: 1;
-                animation: 1s scribble infinite;
+                fill: none;
+                opacity: 0;
+                stroke-dasharray: 50 150;
+                stroke-dashoffset: 100;
+                stroke: $color-white;
+                stroke-width: 2;
+
+                @for $i from 1 through 30 {
+                    &:nth-child(#{$i}) {
+                        animation: 3s squiggle linear $i * .1s infinite;
+                    }
+                }
             }
+
+            
         }
         
         
+    }
+
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: $color-primary;
+        z-index: -1;
+
+        &--text {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            color: $color-white;
+        }
+
         
     }
 }
@@ -82,7 +107,6 @@
         opacity: .5;
     }
 }
-
 @keyframes scribbleBox {
     from {
         stroke-width: 2;
@@ -104,5 +128,34 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    50.1% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes squiggle {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+        stroke-dashoffset: -50;
+    }
+    100% {
+        opacity: 0;
+        stroke-dashoffset: -50;
     }
 }
