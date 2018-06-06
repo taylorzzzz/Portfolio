@@ -94,6 +94,8 @@
 
         updateScrollMeter(scrollPosition);
 
+        checkVisibility();
+
     }
 
     function addMultipleEventListeners(arr, event, callback) {
@@ -214,5 +216,59 @@
         })
     }
     //drawHeroSquiggles();
+
+    function checkVisibility() {
+        const scrollTop = container.scrollTop;
+        const   cutoffTop = scrollTop - 50,
+                cutoffBottom = scrollTop + window.innerHeight - 50;
+
+        const   hiddenElements = document.querySelectorAll('.scroll--hidden'),
+                visibleElements = document.querySelectorAll('.scroll--visible');
+
+        checkHiddenElements(hiddenElements, cutoffTop, cutoffBottom);
+
+        checkVisibleElements(visibleElements, cutoffTop, cutoffBottom);
+    }
+
+    function checkHiddenElements(elements, cutoffTop, cutoffBottom) {
+
+        elements.forEach((el, i) => {
+            
+            const   elementTop = getElementTop(el),
+                    elementBottom = elementTop + el.offsetHeight;
+
+            if (elementTop < cutoffBottom && elementBottom > cutoffTop + 50) {
+                el.classList.remove('scroll--hidden');
+                el.classList.add('scroll--visible');
+            }
+        });
+    }
+
+    function checkVisibleElements(elements, cutoffTop, cutoffBottom) {
+
+        elements.forEach((el, i) => {
+
+            const   elementTop = getElementTop(el),
+                    elementBottom = elementTop + el.offsetHeight;
+                    
+
+            if (cutoffTop > elementBottom || cutoffBottom < elementTop) {
+                el.classList.add('scroll--hidden');
+                el.classList.remove('scroll--visible');
+            }
+        });
+    }
+
+    function getElementTop(element) {
+        var yPosition = 0;
+
+        while(element) {
+            yPosition += (element.offsetTop + element.clientTop);
+            element = element.offsetParent;
+        }
+
+        return yPosition;
+    }
+
 })();
 

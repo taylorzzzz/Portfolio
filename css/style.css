@@ -576,3 +576,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1; }
   100% {
     opacity: 0; } }
+
+.scroll--hidden {
+  opacity: 0;
+  transition: 1.5s all; }
+
+.scroll--visible {
+  opacity: 1;
+  transition: 1.5s all; }
