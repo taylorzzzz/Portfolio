@@ -19,7 +19,7 @@
 
 
     // Use window.addEventListener & window.pageYOffset if not using parallax
-    container.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => {
         
         if (!waitingForUpdate) {
             
@@ -47,7 +47,7 @@
 
         waitingForUpdate = false;    // For debouncing the scroll event handler
 
-        const scrollPosition = container.scrollTop;
+        const scrollPosition = window.pageYOffset;
 
         const currentTop = currentProject !== -1
             ? projects[currentProject].offsetTop 
@@ -187,7 +187,7 @@
 
     function updateScrollMeter(scrollPosition) {
 
-        const totalHeight = pageHeight - container.clientHeight;
+        const totalHeight = pageHeight;
 
         const scrollPercentage = scrollPosition / totalHeight;
 
@@ -218,7 +218,8 @@
     //drawHeroSquiggles();
 
     function checkVisibility() {
-        const scrollTop = container.scrollTop;
+        const scrollTop = window.pageYOffset;
+
         const   cutoffTop = scrollTop - 50,
                 cutoffBottom = scrollTop + window.innerHeight - 50;
 

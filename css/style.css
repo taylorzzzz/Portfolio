@@ -10,11 +10,6 @@ html {
   font-size: 62.5%; }
 
 body {
-  background: #949494;
-  background-image: url(/images/Untitled-3.png);
-  background-size: cover; }
-
-body {
   font-weight: 300;
   font-size: 1.6rem;
   line-height: 1.7; }
@@ -69,7 +64,11 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; }
+  z-index: -1;
+  background: #ffffff;
+  background-image: url(/images/Untitled-1.png);
+  background-blend-mode: difference;
+  background-size: cover; }
   .bg__line {
     width: 20%;
     height: 100vh;
@@ -158,22 +157,6 @@ h1, h2, h3, h4, h5, h6 {
       fill: none;
       stroke: #CC3121;
       stroke-width: 2; } }
-
-.container {
-  height: 100vh;
-  perspective: 1px;
-  perspective-origin: 50% 100%;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: scroll; }
-
-.main-container {
-  position: fixed;
-  height: calc(100% - 40px);
-  width: 100%;
-  margin: 20px 0;
-  box-sizing: border-box;
-  overflow: hidden; }
 
 .hero {
   height: calc(100vh - 40px);
@@ -534,15 +517,6 @@ h1, h2, h3, h4, h5, h6 {
     .project .project__img-container {
       min-height: 100vh;
       position: relative; }
-    .project .project__img--slowest-scroll {
-      transform: translateZ(-0.2px) scale(1.2);
-      z-index: 10; }
-    .project .project__img--slower-scroll {
-      transform: translateZ(-0.1px) scale(1.1);
-      z-index: 20; }
-    .project .project__img--normal-scroll {
-      transform: translateZ(0);
-      z-index: 30; }
   .project .project__image-row {
     display: flex;
     justify-content: space-around; }

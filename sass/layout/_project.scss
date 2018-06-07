@@ -5,6 +5,7 @@
     position: relative;
     display: block;
     transition: background .5s ease-out;
+    
     .project__container {
         padding: 10px 0;
         
@@ -25,19 +26,6 @@
             min-height: 100vh;
             position: relative;
 
-        }
-
-        &--slowest-scroll {
-            transform: translateZ(-.2px) scale(1.2);
-            z-index: 10;
-        }
-        &--slower-scroll {
-            transform: translateZ(-.1px) scale(1.1);
-            z-index: 20;
-        }
-        &--normal-scroll {
-            transform: translateZ(0);
-            z-index: 30;
         }
         
     }
