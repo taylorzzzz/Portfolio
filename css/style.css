@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: #ffffff;
+  background: #171717;
   background-image: url(/images/Untitled-1.png);
   background-blend-mode: difference;
   background-size: cover; }
