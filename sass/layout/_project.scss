@@ -49,7 +49,7 @@
 
         .project__container {
 
-            margin-left: 260px;
+            margin-left: calc(2 * #{$container-margin} + #{$panel-width-med});
             padding: 10px 0;
 
         }
@@ -71,7 +71,12 @@
 
         .project__container {
 
-            margin-left: 310px;
+            .project__container {
+
+                margin-left: calc(2 * #{$container-margin} + #{$panel-width-large});
+                padding: 10px 0;
+    
+            }
             padding: 10px 0;
 
         }

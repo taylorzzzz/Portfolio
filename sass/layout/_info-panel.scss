@@ -158,7 +158,7 @@
 
     .info-panel {
 
-        width: 250px;
+        width: $panel-width-med;
         margin: $container-margin;
         padding: 20px;
         top: 0;
@@ -191,7 +191,8 @@
 
     .info-panel {
 
-        width: 300px;
+        width: $panel-width-large;
+        width: 350px;
 
     }
     

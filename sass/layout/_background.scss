@@ -7,7 +7,7 @@
     height: 100vh;
     z-index: -1;
     background: $color-black;
-    background-image: url(/images/Untitled-1.png);
+    background-image: url(/images/bg1.png);
     background-blend-mode: difference;
     background-size: cover;
 
@@ -116,7 +116,7 @@
 @media screen and (min-width: 768px) {
 
     .bg__text {
-        left: 350px;
+        left: calc(2 * #{$container-margin} + #{$panel-width-med});
     }
 
     .bg__scroll-meter {
@@ -136,4 +136,15 @@
         }
     }
 }
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+    .bg__text {
+        left: calc(2 * #{$container-margin} + #{$panel-width-large});
+    }
+
+}
+
 
