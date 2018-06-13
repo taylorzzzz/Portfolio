@@ -131,11 +131,15 @@
             cursor: pointer;
             color: rgba($color-black, .5);
             margin-right: 20px;
+            transition: all .4s;
 
             &:hover a {
 
                 animation: .4s button-on-hover ease-in-out;
+            }
 
+            &:hover {
+                color: rgba($color-black, .8);
             }
 
             a {

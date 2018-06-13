@@ -446,9 +446,12 @@ h1, h2, h3, h4, h5, h6 {
       overflow: hidden;
       cursor: pointer;
       color: rgba(23, 23, 23, 0.5);
-      margin-right: 20px; }
+      margin-right: 20px;
+      transition: all .4s; }
       .info-panel__links--link:hover a {
         animation: .4s button-on-hover ease-in-out; }
+      .info-panel__links--link:hover {
+        color: rgba(23, 23, 23, 0.8); }
       .info-panel__links--link a {
         font-size: 12px;
         display: inline-block;
