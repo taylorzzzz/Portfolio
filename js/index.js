@@ -13,7 +13,8 @@
 
     let waitingForUpdate,
         currentProject = -1,
-        pageHeight = getPageHeight();
+        pageHeight = setPageHeight(),
+        resizeTimeout;
     
     setupScrollMeter();
 
@@ -155,39 +156,32 @@
 
     }
 
-    function getPageHeight() {
+    function setPageHeight() {
 
-        // The page is made up of hero + projects
-        let height = document.querySelector('.hero').clientHeight;
-
-        projects.forEach(el => {
-            
-            height += el.clientHeight;
-        })
-
-        // However the page this doesn't take into account certain margins
-        // so an alternative might be to just find bottom of the last project 
-        // which as of right now is the last element on the page
-        const lastProject = projects[projects.length -1];
-
-        height = lastProject.offsetTop + lastProject.clientHeight;
-
+        const height = Math.max(
+            document.documentElement.clientHeight,
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+        );
 
         return height;
-
         
     }
 
     function setupScrollMeter() {
 
         scrollMeter.style.strokeDasharray = meterLength;
+
         scrollMeter.style.strokeDashoffset = meterLength;
 
     }
 
     function updateScrollMeter(scrollPosition) {
+        
 
-        const totalHeight = pageHeight;
+        const totalHeight = pageHeight - window.innerHeight;
 
         const scrollPercentage = scrollPosition / totalHeight;
 
@@ -195,8 +189,16 @@
     }
 
     function resizeUpdate() {
-        pageHeight = getPageHeight();
-        console.log(pageHeight);
+
+        clearTimeout(resizeTimeout);
+
+        resizeTimeout = setTimeout(() => {
+            console.log('timeout function running');
+            pageHeight = setPageHeight();
+            console.log(pageHeight);
+            updateScrollMeter();
+        }, 2000);
+        // The large (2s) delay is to allow the images time to resize before we set pageHeight.
     }
 
     function showName() {
