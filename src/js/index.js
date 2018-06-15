@@ -1,22 +1,18 @@
+import { setupScrollMeter, updateScrollMeter } from './scrollMeter.js';
 
-(function() {
+
 
     const   infoPanels = document.querySelectorAll('.info-panel'),
             projects = document.querySelectorAll('.project'),
             projectBGs = document.querySelectorAll('.bg__text'),
-            container = document.querySelector('.container'),
             moreInfo = document.querySelectorAll('.info-panel__expand-button'),
             bg = document.querySelector('.bg__overlay'),
-            BG_SHIFT_AMOUNT = .1,
-            scrollMeter = document.querySelector('.bg__scroll-meter circle'),
-            meterLength = 2 * Math.PI * scrollMeter.r.baseVal.value;
-
+            BG_SHIFT_AMOUNT = .1;
 
     let waitingForUpdate,
         currentProject = -1,
-        pageHeight = setPageHeight(),
         resizeTimeout;
-    
+        
     setupScrollMeter();
 
 
@@ -44,11 +40,11 @@
 
 
     function scrollUpdate() {
-
-        waitingForUpdate = false;    // For debouncing the scroll event handler
+        // For debouncing the scroll event handler
+        waitingForUpdate = false;   
 
         const scrollPosition = window.pageYOffset;
-
+        
         const currentTop = currentProject !== -1
             ? projects[currentProject].offsetTop 
             : 0;
@@ -137,14 +133,9 @@
 
     function toggleInfoExpansion(event, i) {
 
-        // first we need to determine whether we need to open or close the 
-        // info panel. We can do this by checking if the expanded class is 
-        // present or not. If it is then we need to remove it if it's not
-        // we need to add it.
         if (infoPanels[i].className.indexOf(' expanded') == -1) {
-            // then panel is not expanded and we should add the class
+
             infoPanels[i].classList.add('expanded');
-            //moreInfo[i].innerHTML = "less info";
             
         } else {
 
@@ -155,48 +146,14 @@
 
     }
 
-    function setPageHeight() {
-
-        const height = Math.max(
-            document.documentElement.clientHeight,
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight,
-            document.body.offsetHeight,
-            document.documentElement.offsetHeight
-        );
-
-        return height;
-        
-    }
-
-    function setupScrollMeter() {
-
-        scrollMeter.style.strokeDasharray = meterLength;
-
-        scrollMeter.style.strokeDashoffset = meterLength;
-
-    }
-
-    function updateScrollMeter(scrollPosition) {
-        
-
-        const totalHeight = pageHeight - window.innerHeight;
-
-        const scrollPercentage = scrollPosition / totalHeight;
-
-        scrollMeter.style.strokeDashoffset = meterLength - (meterLength * scrollPercentage);
-    }
-
     function resizeUpdate() {
 
         clearTimeout(resizeTimeout);
 
         resizeTimeout = setTimeout(() => {
-            console.log('timeout function running');
-            pageHeight = setPageHeight();
-            console.log(pageHeight);
-            updateScrollMeter();
-        }, 2000);
+            const scrollPosition = window.pageYOffset;
+            updateScrollMeter(scrollPosition);
+        }, 200);
         // The large (2s) delay is to allow the images time to resize before we set pageHeight.
     }
 
@@ -207,17 +164,6 @@
         name.classList.add('show');
 
     }
-
-    function drawHeroSquiggles() {
-
-        const squiggles = document.querySelectorAll('.squiggles path');
-
-        squiggles.forEach((el,i) => {
-            const length = el.getTotalLength();
-        });
-
-    }
-    //drawHeroSquiggles();
 
     function checkVisibility() {
         const scrollTop = window.pageYOffset;
@@ -272,6 +218,3 @@
 
         return yPosition;
     }
-
-})();
-

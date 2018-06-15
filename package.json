@@ -4,18 +4,22 @@
   "description": "Portfolio for Taylor Ward",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d build -w",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack -p",
+    "serve": "webpack-dev-server",
     "compile:sass": "node-sass src/sass/main.scss src/css/style.css -wr"
-  },
-  "babel": {
-    "presets": ["env"]
   },
   "author": "Taylor Ward",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "html-webpack-plugin": "2.26.x",
+    "rimraf": "2.5.4",
+    "webpack": "1.14.0",
+    "webpack-dev-server": "1.16.2"
   },
   "dependencies": {}
 }
