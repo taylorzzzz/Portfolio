@@ -1,3 +1,4 @@
+
 (function() {
 
     const   infoPanels = document.querySelectorAll('.info-panel'),
@@ -39,8 +40,6 @@
         toggleInfoExpansion(event, i);
 
     })
-
-
 
 
 
@@ -210,12 +209,13 @@
     }
 
     function drawHeroSquiggles() {
+
         const squiggles = document.querySelectorAll('.squiggles path');
 
         squiggles.forEach((el,i) => {
             const length = el.getTotalLength();
-            
-        })
+        });
+
     }
     //drawHeroSquiggles();
 
