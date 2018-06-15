@@ -4,11 +4,17 @@
   "description": "Portfolio for Taylor Ward",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -wr",
+    "build": "babel src -d build -w",
+    "compile:sass": "node-sass src/sass/main.scss src/css/style.css -wr"
+  },
+  "babel": {
+    "presets": ["env"]
   },
   "author": "Taylor Ward",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "node-sass": "^4.9.0"
   },
   "dependencies": {}

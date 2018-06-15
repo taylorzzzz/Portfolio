@@ -65,9 +65,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: #171717;
+  background: #CC3121;
   background-image: url(/images/bg1.png);
-  background-blend-mode: difference;
+  background-blend-mode: screen;
   background-size: cover; }
   .bg__line {
     width: 20%;
