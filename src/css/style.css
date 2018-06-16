@@ -1,8 +1,8 @@
 /*
-$color-bg-hero: #ddd;
-$color-bg-one: #eee;
-$color-bg-two: #f9f9f9;
-$color-bg-three: #fff;
+$color-bg-hero: #7F5C3C;
+$color-bg-one: #FFE0C5;
+$color-bg-two: #211205;
+$color-bg-three: #FFB779;
 */
 @import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900);
 *,
@@ -109,7 +109,8 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0%;
     transform: translate(-50%, 50%);
-    right: 50%; }
+    right: 50%;
+    z-index: 50; }
     .bg__scroll-meter svg circle {
       fill: none;
       stroke: #CC3121;
@@ -161,34 +162,42 @@ h1, h2, h3, h4, h5, h6 {
     left: calc(2 * 20px + 350px); } }
 
 svg.drip {
-  width: 150%;
+  width: 100%;
   position: absolute;
-  top: 0%;
-  left: -10%;
+  left: 0%;
   right: 0;
   z-index: 10; }
+  svg.drip__top {
+    top: 0%; }
+  svg.drip__bottom {
+    bottom: 0%; }
   svg.drip path {
     stroke: none; }
   svg.drip--hero path {
-    fill: #7F5C3C; }
+    fill: #ddd; }
   svg.drip--one path {
-    fill: #FFE0C5; }
+    fill: #eee; }
   svg.drip--two path {
-    fill: #211205; }
+    fill: #f9f9f9; }
+  svg.drip--three path {
+    fill: #fff; }
+  svg.drip--white path {
+    fill: #171717; }
 
 .hero {
   height: calc(100vh - 40px);
   position: relative;
   opacity: 1;
   box-sizing: border-box;
-  background: #7F5C3C;
+  background: #ddd;
   overflow: hidden; }
   .hero__text {
     text-transform: uppercase;
     color: #ffffff;
     position: absolute;
     top: 20%;
-    left: 0%; }
+    left: 0%;
+    z-index: 100; }
     .hero__text--name {
       font-weight: 900;
       font-size: 90px; }
@@ -295,7 +304,7 @@ svg.drip {
     width: 50%;
     height: 100%;
     background: #CC3121;
-    z-index: -1; }
+    z-index: 9; }
     .hero__box--text {
       position: absolute;
       bottom: 0;
@@ -347,19 +356,22 @@ svg.drip {
     stroke-dashoffset: -50; } }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 20px;
-  right: 20px; }
+  right: 20px;
+  z-index: 1000; }
   .header svg {
-    width: 60px;
-    background: #CC3121; }
+    width: 80px;
+    background: #171717;
+    padding: 5px; }
     .header svg text {
       opacity: 0;
       stroke: #ffffff;
       fill: none;
       stroke-width: 1;
       stroke-dasharray: 100;
-      stroke-dashoffset: 100; }
+      stroke-dashoffset: 100;
+      mix-blend-mode: difference; }
       .header svg text.show {
         animation: 2s animate linear forwards; }
 
@@ -548,12 +560,6 @@ svg.drip {
     justify-content: space-around; }
     .project .project__image-row .project__img {
       margin: 0; }
-  .project--one {
-    background: #FFE0C5; }
-  .project--two {
-    background: #211205; }
-  .project--three {
-    background: #FFB779; }
 
 /* Ipad */
 @media screen and (min-width: 768px) {
@@ -585,10 +591,26 @@ svg.drip {
   100% {
     opacity: 0; } }
 
-.scroll--hidden {
-  opacity: 0;
-  transition: 1.5s all; }
+.scroll-meter {
+  opacity: 0; }
 
-.scroll--visible {
-  opacity: 1;
-  transition: 1.5s all; }
+@media screen and (min-width: 768px) {
+  .scroll--hidden {
+    opacity: 0;
+    transition: 1.5s all; }
+  .scroll--visible {
+    opacity: 1;
+    transition: 1.5s all; }
+  .scroll-meter {
+    opacity: 1;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+    border: 1px solid; }
+    .scroll-meter svg {
+      width: 40px; }
+      .scroll-meter svg circle {
+        fill: none;
+        stroke: #171717;
+        stroke-width: 1px; } }

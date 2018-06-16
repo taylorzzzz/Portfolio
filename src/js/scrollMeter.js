@@ -1,4 +1,4 @@
-const scrollMeter = document.querySelector('.bg__scroll-meter circle');
+const scrollMeter = document.querySelector('.scroll-meter circle');
 const meterLength = 2 * Math.PI * scrollMeter.r.baseVal.value;
 
 let resizeTimeout;

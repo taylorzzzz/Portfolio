@@ -1,12 +1,13 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    
+    z-index: 1000;
+     
     svg {
-        width: 60px;
-        background: $color-primary;
-        
+        width: 80px;
+        background: $color-black;
+        padding: 5px;
         text {
             opacity: 0;
             stroke: $color-white;
@@ -14,6 +15,7 @@
             stroke-width: 1;
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
+            mix-blend-mode: difference;
             
             &.show {
                 animation: 2s animate linear forwards;
