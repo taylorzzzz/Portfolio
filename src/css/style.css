@@ -590,26 +590,28 @@ svg.drip {
   100% {
     opacity: 0; } }
 
+.scroll--hidden {
+  opacity: 0;
+  transition: 1.5s all; }
+
+.scroll--visible {
+  opacity: 1;
+  transition: 1.5s all; }
+
 .scroll-meter {
-  opacity: 0; }
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  border: 1px solid; }
+  .scroll-meter svg {
+    width: 40px; }
+    .scroll-meter svg circle {
+      fill: none;
+      stroke: #171717;
+      stroke-width: 1px; }
 
 @media screen and (min-width: 768px) {
-  .scroll--hidden {
-    opacity: 0;
-    transition: 1.5s all; }
-  .scroll--visible {
-    opacity: 1;
-    transition: 1.5s all; }
   .scroll-meter {
-    opacity: 1;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 50;
-    border: 1px solid; }
-    .scroll-meter svg {
-      width: 40px; }
-      .scroll-meter svg circle {
-        fill: none;
-        stroke: #171717;
-        stroke-width: 1px; } }
+    opacity: 1; } }

@@ -1,39 +1,39 @@
 $transition-fade: '1s all';
 
-.scroll-meter {
-    opacity: 0;
+.scroll {
+    &--hidden {
+        opacity: 0;
+        transition: 1.5s all;
+    }
+    &--visible {
+        opacity: 1;
+        transition: 1.5s all;
+    }
+
+    &-meter {
+        opacity: 0;
+        position: fixed;
+        bottom: $container-margin;
+        right: $container-margin;
+        z-index: 50;
+        border:1px solid;
+
+        svg {
+            width: 40px;
+
+            circle {
+                
+                fill: none;
+                stroke: $color-black;
+                stroke-width: 1px;
+            }
+        }
+    }
 }
 @media screen and (min-width: 768px) {
 
-    .scroll {
-        &--hidden {
-            opacity: 0;
-            transition: 1.5s all;
-        }
-        &--visible {
-            opacity: 1;
-            transition: 1.5s all;
-        }
-    
-        &-meter {
-            opacity: 1;
-            position: fixed;
-            bottom: $container-margin;
-            right: $container-margin;
-            z-index: 50;
-            border:1px solid;
-    
-            svg {
-                width: 40px;
-    
-                circle {
-                    
-                    fill: none;
-                    stroke: $color-black;
-                    stroke-width: 1px;
-                }
-            }
-        }
+    .scroll-meter {
+        opacity: 1;
     }
     
 }
