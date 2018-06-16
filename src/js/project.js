@@ -1,12 +1,14 @@
-import { show, hide, showName, getElementTop } from './utilityFunctions.js';
-
+import { show, hide, showName, getElementTop,addMultipleEventListeners } from './utilityFunctions.js';
 
 export const infoPanels = document.querySelectorAll('.info-panel');
-export const projects = document.querySelectorAll('.project');
-export const projectBGs = document.querySelectorAll('.bg__text');
 
-const   BG_SHIFT_AMOUNT = .1,
-        bg = document.querySelector('.bg__overlay');
+const   projects = document.querySelectorAll('.project'),
+        projectBGs = document.querySelectorAll('.bg__text');
+
+const moreInfo = document.querySelectorAll('.info-panel__expand-button');
+
+addMultipleEventListeners(moreInfo, 'click', (event, i) => toggleInfoExpansion(event, i) )
+
 
 let currentProject = -1;
 
@@ -42,8 +44,6 @@ export function checkProject(scrollPosition) {
 
             infoPanels[currentProject].classList.remove('expanded');
 
-            bg.style.opacity = +bg.style.opacity + BG_SHIFT_AMOUNT;
-
         } else { showName() }
 
         currentProject++;
@@ -61,8 +61,6 @@ export function checkProject(scrollPosition) {
         if (currentProject !== -1) {
 
             show(projectBGs[currentProject]);
-
-            bg.style.opacity = +bg.style.opacity - BG_SHIFT_AMOUNT;
 
         }
 
