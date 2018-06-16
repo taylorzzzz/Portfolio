@@ -362,29 +362,28 @@ svg.drip {
   z-index: 1000; }
   .header svg {
     width: 80px;
-    background: #171717;
+    border: 1px solid #171717;
     padding: 5px; }
     .header svg text {
-      opacity: 0;
-      stroke: #ffffff;
       fill: none;
+      stroke: #171717;
       stroke-width: 1;
-      stroke-dasharray: 100;
-      stroke-dashoffset: 100;
-      mix-blend-mode: difference; }
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500; }
       .header svg text.show {
         animation: 2s animate linear forwards; }
 
 @keyframes animate {
-  0% { }
+  0% {
+    stroke-dashoffset: 500; }
   80% {
-    fill: rgba(255, 255, 255, 0);
+    fill: rgba(23, 23, 23, 0);
     opacity: 1; }
   100% {
     stroke-dashoffset: 0;
-    fill: white;
+    fill: #171717;
     opacity: 1;
-    stroke-width: 0; } }
+    stroke-width: 1; } }
 
 .info-panel {
   margin: 0px;
