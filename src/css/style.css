@@ -1,3 +1,9 @@
+/*
+$color-bg-hero: #ddd;
+$color-bg-one: #eee;
+$color-bg-two: #f9f9f9;
+$color-bg-three: #fff;
+*/
 @import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900);
 *,
 *::after,
@@ -154,14 +160,29 @@ h1, h2, h3, h4, h5, h6 {
   .bg__text {
     left: calc(2 * 20px + 350px); } }
 
+svg.drip {
+  width: 150%;
+  position: absolute;
+  top: 0%;
+  left: -10%;
+  right: 0;
+  z-index: 10; }
+  svg.drip path {
+    stroke: none; }
+  svg.drip--hero path {
+    fill: #7F5C3C; }
+  svg.drip--one path {
+    fill: #FFE0C5; }
+  svg.drip--two path {
+    fill: #211205; }
+
 .hero {
   height: calc(100vh - 40px);
-  overflow: hidden;
   position: relative;
   opacity: 1;
   box-sizing: border-box;
-  margin: 0 20px 20px;
-  margin-bottom: 200px; }
+  background: #7F5C3C;
+  overflow: hidden; }
   .hero__text {
     text-transform: uppercase;
     color: #ffffff;
@@ -506,16 +527,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   position: relative;
   display: block;
-  transition: background .5s ease-out; }
+  transition: background .5s ease-out;
+  padding-top: 100px;
+  overflow-x: hidden; }
   .project .project__container {
     padding: 10px 0; }
   .project .project__img {
+    position: relative;
     display: block;
     max-height: 100vh;
     width: auto;
     max-width: 100%;
     margin: 200px auto;
-    z-index: 1; }
+    z-index: 20; }
     .project .project__img-container {
       min-height: 100vh;
       position: relative; }
@@ -524,6 +548,12 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around; }
     .project .project__image-row .project__img {
       margin: 0; }
+  .project--one {
+    background: #FFE0C5; }
+  .project--two {
+    background: #211205; }
+  .project--three {
+    background: #FFB779; }
 
 /* Ipad */
 @media screen and (min-width: 768px) {
