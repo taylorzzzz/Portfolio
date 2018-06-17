@@ -1,96 +1,86 @@
 .hero {
-    
-    height: calc(100vh - 40px);
+    height: calc(100vh - 0px);
     position: relative;
     opacity: 1;
     box-sizing: border-box;
-    background: $color-bg-hero;
+    //background: $color-white;
     overflow: hidden;
-    
-    &__text {
-        text-transform: uppercase;
-        color: $color-white;
-        position: absolute;
-        top: 20%;
-        left: 0%;
-        z-index: 100;
 
-        &--name {
-            font-weight: 900;
-            font-size: 90px;
-        }
-        &--job {
-            font-weight: 900;
-            font-size: 90px;
-        }
-        
+    &__scroll-down {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        background: $color-primary;
+        padding: 10px;
+        color: $color-white;
     }
 
-    svg {
-        &.scribbles {
-            
-            height: 150%;
-            //max-height: 100px;
-            position: absolute;
-            left: 20%;
-            top: -10%;
-            fill: none;
-            opacity: 1;
-
-            @for $i from 1 through 3 {
-
-                #scribble-#{$i} {
-                    stroke-width: 1;
-                    
-                    stroke: $color-primary;
-                    opacity: 1;
-                    animation: 1s scribble $i * .333s infinite;
-                }
-            }
-            
-        }
-
-        &.squiggles {
-            position: absolute;
-            height: 100%;
+    &__text {
+        text-transform: uppercase;
+        color: $color-black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        font-size: 90px;
+        //padding: 20px;
+        //background: $color-black;
+        &--job,
+        &--name {
+            font-weight: 900;
             width: 100%;
-
-            path {
-                fill: none;
-                opacity: 0;
-                stroke-dasharray: 50 150;
-                stroke-dashoffset: 100;
-                stroke: $color-white;
-                stroke-width: 2;
-
-                @for $i from 1 through 30 {
-                    &:nth-child(#{$i}) {
-                        animation: 3s squiggle linear $i * .1s infinite;
-                    }
-                }
+            &-1 {
+                margin: 10px;
+                //background: $color-primary;
+                padding: 10px;
             }
-
-            
+            &-2 {
+                padding: 10px;
+                //background: $color-primary;
+                margin: 10px;                
+            }
         }
-        
         
     }
 
     &__box {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%, -50%);
         background: $color-primary;
-        z-index: 9;
+        z-index: 90;
 
-        &--text {
-            position: absolute;
-            bottom: 0;
-            right: 10px;
-            color: $color-white;
+        svg {
+            width: 200%;
+            left: -50%;
+            top: -50%;
+            &.scribbles {
+                
+                position: absolute;
+                fill: none;
+                opacity: 1;
+    
+                @for $i from 1 through 3 {
+    
+                    #scribble-#{$i} {
+                        stroke-width: 1;
+                        
+                        stroke: $color-primary;
+                        opacity: 1;
+                        animation: 1s scribble $i * .333s infinite;
+                    }
+                }
+                
+            }
+            
         }
+
+        
 
         
     }
