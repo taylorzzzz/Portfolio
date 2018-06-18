@@ -300,7 +300,6 @@ svg.drip {
   z-index: 1000; }
   .header svg {
     width: 80px;
-    border: 1px solid #171717;
     padding: 5px; }
     .header svg text {
       fill: none;
