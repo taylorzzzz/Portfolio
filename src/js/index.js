@@ -3,6 +3,7 @@ import { infoPanels,
         checkProject,
         checkVisibility,
         toggleInfoExpansion } from './project.js';
+import { checkArrow } from './scrollArrow.js';
 
 let waitingForUpdate;
     
@@ -36,6 +37,8 @@ function scrollUpdate() {
     checkProject(scrollPosition);
 
     updateScrollMeter(scrollPosition);
+
+    //checkArrow(scrollPosition);
 
     checkVisibility();
 

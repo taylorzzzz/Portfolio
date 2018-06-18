@@ -1,10 +1,10 @@
 /*
-$color-bg-hero: #7F5C3C;
-$color-bg-one: #FFE0C5;
-$color-bg-two: #211205;
-$color-bg-three: #FFB779;
+$color-bg-hero: #ddd;
+$color-bg-one: #eee;
+$color-bg-two: #f9f9f9;
+$color-bg-three: #fff;
 */
-@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900);
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900|Nova+Cut);
 *,
 *::after,
 *::before {
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif; }
 
 .header__name {
-  font-family: "Pirata One", serif;
+  font-family: "Nova Cut", cursive;
   font-size: 22px; }
 
 .hero {
@@ -90,14 +90,14 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     right: 0;
     font-size: 180px;
-    color: rgba(255, 255, 255, 0.05);
+    color: white;
     font-weight: 900;
     z-index: -1;
     letter-spacing: .5em;
     overflow-wrap: break-word;
     line-height: 1em;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase; }
     .bg__text.show {
@@ -174,49 +174,21 @@ svg.drip {
   svg.drip path {
     stroke: none; }
   svg.drip--hero path {
-    fill: #ddd; }
+    fill: #fff; }
   svg.drip--one path {
-    fill: #eee; }
+    fill: #fff; }
   svg.drip--two path {
-    fill: #f9f9f9; }
+    fill: #fff; }
   svg.drip--three path {
     fill: #fff; }
   svg.drip--white path {
     fill: #171717; }
 
-.hero {
-  height: calc(100vh - 0px);
+.footer {
+  background: #ffffff;
   position: relative;
-  opacity: 1;
-  box-sizing: border-box;
-  overflow: hidden; }
-  .hero__scroll-down {
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    background: #CC3121;
-    padding: 10px;
-    color: #ffffff; }
-  .hero__text {
-    text-transform: uppercase;
-    color: #171717;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    font-size: 90px; }
-    .hero__text--job, .hero__text--name {
-      font-weight: 900;
-      width: 100%; }
-      .hero__text--job-1, .hero__text--name-1 {
-        margin: 10px;
-        padding: 10px; }
-      .hero__text--job-2, .hero__text--name-2 {
-        padding: 10px;
-        margin: 10px; }
-  .hero__box {
+  min-height: 100vh; }
+  .footer__scribble-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -225,43 +197,29 @@ svg.drip {
     transform: translate(-50%, -50%);
     background: #CC3121;
     z-index: 90; }
-    .hero__box svg {
+    .footer__scribble-box svg {
       width: 200%;
       left: -50%;
       top: -50%; }
-      .hero__box svg.scribbles {
+      .footer__scribble-box svg.scribbles {
         position: absolute;
         fill: none;
         opacity: 1; }
-        .hero__box svg.scribbles #scribble-1 {
+        .footer__scribble-box svg.scribbles #scribble-1 {
           stroke-width: 1;
           stroke: #CC3121;
           opacity: 1;
           animation: 1s scribble 0.333s infinite; }
-        .hero__box svg.scribbles #scribble-2 {
+        .footer__scribble-box svg.scribbles #scribble-2 {
           stroke-width: 1;
           stroke: #CC3121;
           opacity: 1;
           animation: 1s scribble 0.666s infinite; }
-        .hero__box svg.scribbles #scribble-3 {
+        .footer__scribble-box svg.scribbles #scribble-3 {
           stroke-width: 1;
           stroke: #CC3121;
           opacity: 1;
           animation: 1s scribble 0.999s infinite; }
-
-@keyframes draw {
-  from {
-    stroke-dashoffset: 400;
-    transform: rotate(360deg); }
-  to {
-    transform: rotate(0);
-    opacity: .5; } }
-
-@keyframes scribbleBox {
-  from {
-    stroke-width: 2; }
-  to {
-    stroke-width: 4; } }
 
 @keyframes scribble {
   0% {
@@ -273,25 +231,62 @@ svg.drip {
   100% {
     opacity: 0; } }
 
-@keyframes cursor {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  50.1% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
+.hero {
+  height: calc(100vh - 0px);
+  position: relative;
+  opacity: 1;
+  box-sizing: border-box;
+  overflow: hidden; }
+  .hero__text {
+    text-transform: uppercase;
+    color: #ffffff;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    font-size: 50px;
+    padding: 20px;
+    background: #cc3121;
+    mix-blend-mode: darken; }
+    .hero__text--job {
+      font-size: 20px; }
+  .hero__arrow {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    height: 200px;
+    z-index: 200;
+    animation: 1s bounce alternate infinite linear;
+    transition: opacity 1s; }
+    .hero__arrow line {
+      stroke: #171717;
+      animation-timing-function: cubic-bezier(0.17, 0.67, 0.87, 0.37); }
+    .hero__arrow polygon {
+      fill: #171717;
+      stroke: #171717; }
+    .hero__arrow.hide {
+      opacity: 0; }
+  .hero svg text {
+    font-family: WorkSans-Thin;
+    fill: #171717;
+    stroke: #171717;
+    font-size: 30px;
+    text-anchor: start;
+    animation-delay: 3s; }
 
-@keyframes squiggle {
+@keyframes bounce {
   0% {
-    opacity: 1; }
-  20% {
-    opacity: 0;
-    stroke-dashoffset: -50; }
+    transform: translateY(10px); }
+  50% { }
   100% {
-    opacity: 0;
-    stroke-dashoffset: -50; } }
+    transform: translateY(0); } }
+
+@keyframes arrowLine {
+  0% { }
+  100% {
+    stroke-dashoffset: -220;
+    opacity: 0; } }
 
 .header {
   position: fixed;
@@ -487,7 +482,8 @@ svg.drip {
     width: auto;
     max-width: 100%;
     margin: 200px auto;
-    z-index: 20; }
+    z-index: 20;
+    box-shadow: 0px 10px 30px -3px rgba(23, 23, 23, 0.55); }
     .project .project__img-container {
       min-height: 100vh;
       position: relative; }

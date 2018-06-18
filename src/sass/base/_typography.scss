@@ -1,8 +1,8 @@
 
-@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900);
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900|Nova+Cut);
 
 $primary-font: 'Work Sans', sans-serif;
-$name-tag-font: 'Pirata One', serif;
+$name-tag-font: 'Nova Cut', cursive;
 
 body {
     font-weight: 300;
@@ -52,6 +52,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .hero {
     font-family: $primary-font;
+    //font-family: $name-tag-font;
 }
 
 .about__link {

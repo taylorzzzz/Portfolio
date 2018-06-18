@@ -1,0 +1,59 @@
+.footer {
+    background: $color-white;
+    position: relative;
+    min-height: 100vh;
+
+    &__scribble-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%, -50%);
+        background: $color-primary;
+        z-index: 90;
+
+        svg {
+            width: 200%;
+            left: -50%;
+            top: -50%;
+
+            &.scribbles {
+                
+                position: absolute;
+                fill: none;
+                opacity: 1;
+    
+                @for $i from 1 through 3 {
+    
+                    #scribble-#{$i} {
+                        stroke-width: 1;
+                        
+                        stroke: $color-primary;
+                        opacity: 1;
+                        animation: 1s scribble $i * .333s infinite;
+                    }
+                }
+                
+            }
+            
+        }
+
+    }
+}
+
+@keyframes scribble {
+    0% {
+        opacity: 1;
+    }
+    
+    33.33% {
+        opacity: 1;
+    }
+    33.34% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

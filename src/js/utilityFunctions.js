@@ -23,7 +23,7 @@ export function hide() {
 
 export function showName() {
 
-    const name = document.querySelector('header .name text');
+    const name = document.querySelector('header');
 
     name.classList.add('show');
 
@@ -51,5 +51,32 @@ export function addMultipleEventListeners(arr, event, callback) {
         });
 
     })
+
+}
+
+export function hasClass(element, selector) {
+
+    let className = ` ${selector} `;
+    let elementClasses;
+    // Accounts for SVG elements 
+    if (element instanceof SVGElement) {
+        
+        elementClasses = ` ${element.className.baseVal} `;
+
+    } else {
+
+        elementClasses = ` ${element.className} `;
+
+    }
+    
+    const finalClassString = elementClasses.replace(/[\n\t]/g, " ");
+
+    if ( finalClassString.indexOf(className) > -1 ) {
+
+        return true;
+
+    } 
+
+    return false;
 
 }
