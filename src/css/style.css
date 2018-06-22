@@ -90,14 +90,14 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     right: 0;
     font-size: 180px;
-    color: white;
+    color: rgba(255, 255, 255, 0.15);
     font-weight: 900;
     z-index: -1;
     letter-spacing: .5em;
     overflow-wrap: break-word;
     line-height: 1em;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity .2s ease-in-out;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase; }
     .bg__text.show {
@@ -240,19 +240,36 @@ svg.drip {
   .hero__text {
     text-transform: uppercase;
     color: #ffffff;
-    position: fixed;
-    top: 20%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
     font-size: 50px;
-    padding: 20px;
+    padding: 50px;
     background: #cc3121;
     mix-blend-mode: darken; }
     .hero__text--job {
       font-size: 20px; }
+  .hero__dir {
+    z-index: 100;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer; }
+    .hero__dir--arrow {
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%); }
+      .hero__dir--arrow line, .hero__dir--arrow polygon {
+        fill: #171717;
+        stroke: #171717; }
   .hero__arrow {
-    position: fixed;
+    position: absolute;
     bottom: 10%;
     left: 50%;
     height: 200px;

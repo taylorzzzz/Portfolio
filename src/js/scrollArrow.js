@@ -1,9 +1,9 @@
 import { hide, show, hasClass } from "./utilityFunctions";
 
-const arrow = document.querySelector('.hero__arrow');
+export const arrow = document.querySelector('.hero__dir');
 
 const ARROW_CUTOFF = 100;
-
+/*
 export function checkArrow(scrollPosition) {
 
 
@@ -17,4 +17,9 @@ export function checkArrow(scrollPosition) {
         hide(arrow);
     }
     
+}
+*/
+
+export function scrollToProjects() {
+    console.log('click');
 }

@@ -1,9 +1,11 @@
 import { setupScrollMeter, updateScrollMeter, resizeUpdate } from './scrollMeter.js';
+
 import { infoPanels,
         checkProject,
         checkVisibility,
         toggleInfoExpansion } from './project.js';
-import { checkArrow } from './scrollArrow.js';
+
+import { arrow, scrollToProjects } from './scrollArrow.js';
 
 let waitingForUpdate;
     
@@ -26,6 +28,7 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', resizeUpdate);
 
 
+arrow.addEventListener('click', scrollToProjects);
 
 
 function scrollUpdate() {
@@ -40,6 +43,6 @@ function scrollUpdate() {
 
     //checkArrow(scrollPosition);
 
-    checkVisibility();
+    checkVisibility(scrollPosition);
 
 }

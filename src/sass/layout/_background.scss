@@ -34,14 +34,14 @@
         left: 0px;
         right: 0;
         font-size: 180px;
-        color: rgba($color-white, 1.05);
+        color: rgba($color-white, .15);
         font-weight: 900;
         z-index: -1;
         letter-spacing: .5em;
         overflow-wrap: break-word;
         line-height: 1em;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity .2s ease-in-out;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-transform: uppercase;
 

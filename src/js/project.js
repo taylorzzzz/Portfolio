@@ -11,6 +11,8 @@ addMultipleEventListeners(moreInfo, 'click', (event, i) => toggleInfoExpansion(e
 
 
 let currentProject = -1;
+let currentHeight = projects[0].offsetTop;
+let currentTop = 0;
 
 export function toggleInfoExpansion(event, i) {
 
@@ -27,14 +29,6 @@ export function toggleInfoExpansion(event, i) {
 }
 
 export function checkProject(scrollPosition) {
-        
-    const currentTop = currentProject !== -1
-        ? projects[currentProject].offsetTop 
-        : 0;
-
-    const currentHeight = currentProject !== -1    
-        ? projects[currentProject].offsetHeight
-        : projects[0].offsetTop;
 
     if (scrollPosition > currentTop + currentHeight) {
 
@@ -47,6 +41,9 @@ export function checkProject(scrollPosition) {
         } else { showName() }
 
         currentProject++;
+        // recalc height and top
+        currentHeight = getHeight(currentProject);
+        currentTop = getTop(currentProject);
         
         show(infoPanels[currentProject], projectBGs[currentProject]);
 
@@ -56,7 +53,10 @@ export function checkProject(scrollPosition) {
 
         infoPanels[currentProject].classList.remove('expanded');
 
-        currentProject--;            
+        currentProject--;  
+        // recalc height and top
+        currentHeight = getHeight(currentProject);
+        currentTop = getTop(currentProject);
 
         if (currentProject !== -1) {
 
@@ -65,6 +65,18 @@ export function checkProject(scrollPosition) {
         }
 
     }
+}
+
+function getTop(currentProject) {
+    console.log('getting top of currentProject');
+    return currentTop = currentProject !== -1
+        ? projects[currentProject].offsetTop 
+        : 0;
+}
+function getHeight(currentProject) {
+    return currentHeight = currentProject !== -1    
+        ? projects[currentProject].offsetHeight
+        : projects[0].offsetTop;
 }
 
 export function checkHiddenElements(elements, cutoffTop, cutoffBottom) {
@@ -96,8 +108,7 @@ export function checkVisibleElements(elements, cutoffTop, cutoffBottom) {
     });
 }
 
-export function checkVisibility() {
-    const scrollTop = window.pageYOffset;
+export function checkVisibility(scrollTop) {
 
     const   cutoffTop = scrollTop - 50,
             cutoffBottom = scrollTop + window.innerHeight - 50;
@@ -108,5 +119,6 @@ export function checkVisibility() {
     checkHiddenElements(hiddenElements, cutoffTop, cutoffBottom);
 
     checkVisibleElements(visibleElements, cutoffTop, cutoffBottom);
+
 }
 

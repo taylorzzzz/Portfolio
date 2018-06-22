@@ -9,13 +9,13 @@
     &__text {
         text-transform: uppercase;
         color: $color-white;
-        position: fixed;
-        top: 20%;
+        position: absolute;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;
         font-size: 50px;
-        padding: 20px;
+        padding: 50px;
         background: rgba($color-primary,1);
         mix-blend-mode: darken;
         
@@ -25,8 +25,33 @@
         
     }
 
+    &__dir {
+        z-index: 100;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        height: 50px;
+        transform: translateX(-50%);
+        cursor: pointer;
+
+        &--view {
+            
+        }
+        &--arrow {
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            line, polygon {
+                fill: $color-black;
+                stroke: $color-black;
+            }
+        }
+    }
+
     &__arrow {
-        position: fixed;
+        position: absolute;
         bottom: 10%;
         left: 50%;
         height: 200px;
