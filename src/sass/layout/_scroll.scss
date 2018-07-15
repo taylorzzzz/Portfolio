@@ -3,11 +3,11 @@ $transition-fade: '1s all';
 .scroll {
     &--hidden {
         opacity: 0;
-        transition: 1.5s all;
+        transition: .5s all;
     }
     &--visible {
         opacity: 1;
-        transition: 1.5s all;
+        transition: .5s all;
     }
 
     &-meter {

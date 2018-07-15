@@ -7,8 +7,8 @@
     height: 100vh;
     z-index: -1;
     background:  $color-primary;
-    background-image: url(/images/Untitled-3.png);
-    background-blend-mode: screen;
+    //background-image: url(/images/Untitled-3-opt.png);
+    background-blend-mode: lighten;
     background-size: cover;
 
     &__line {
@@ -34,7 +34,7 @@
         left: 0px;
         right: 0;
         font-size: 180px;
-        color: rgba($color-white, .15);
+        color: rgba($color-white, .05);
         font-weight: 900;
         z-index: -1;
         letter-spacing: .5em;

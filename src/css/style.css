@@ -75,8 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   z-index: -1;
   background: #222;
-  background-image: url(/images/Untitled-3.png);
-  background-blend-mode: screen;
+  background-blend-mode: lighten;
   background-size: cover; }
   .bg__line {
     width: 20%;
@@ -93,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0px;
     right: 0;
     font-size: 180px;
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.05);
     font-weight: 900;
     z-index: -1;
     letter-spacing: .5em;
@@ -294,7 +293,7 @@ svg.drip {
     font-size: 50px;
     padding: 50px;
     background: #222222;
-    mix-blend-mode: darken; }
+    border: 1px solid #ffffff; }
     .hero__text--job {
       font-size: 20px; }
   .hero__dir {
@@ -533,7 +532,7 @@ svg.drip {
   width: 100%;
   position: relative;
   display: block;
-  transition: background .5s ease-out;
+  transition: background .1s ease-out;
   padding-top: 100px;
   overflow-x: hidden; }
   .project .project__container {
@@ -588,11 +587,11 @@ svg.drip {
 
 .scroll--hidden {
   opacity: 0;
-  transition: 1.5s all; }
+  transition: .5s all; }
 
 .scroll--visible {
   opacity: 1;
-  transition: 1.5s all; }
+  transition: .5s all; }
 
 .scroll-meter {
   opacity: 0;
