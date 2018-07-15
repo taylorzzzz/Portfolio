@@ -44,7 +44,6 @@ export function checkProject(scrollPosition) {
         // recalc height and top
         currentHeight = getHeight(currentProject);
         currentTop = getTop(currentProject);
-        
         show(infoPanels[currentProject], projectBGs[currentProject]);
 
     } else if (scrollPosition < currentTop) {
@@ -68,7 +67,6 @@ export function checkProject(scrollPosition) {
 }
 
 function getTop(currentProject) {
-    console.log('getting top of currentProject');
     return currentTop = currentProject !== -1
         ? projects[currentProject].offsetTop 
         : 0;

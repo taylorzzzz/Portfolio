@@ -1,7 +1,5 @@
 export function show() {
-        
     for (let i=0; i < arguments.length; i++) {
-
         arguments[i].classList.add('show');
 
         arguments[i].classList.remove('hide');

@@ -30,6 +30,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   margin: 0; }
 
+.contact {
+  font-family: "Work Sans", sans-serif; }
+
 .project .project__title {
   font-size: 360px;
   font-weight: 800;
@@ -161,6 +164,49 @@ h1, h2, h3, h4, h5, h6 {
   .bg__text {
     left: calc(2 * 20px + 350px); } }
 
+.contact {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  transform: translateX(100vw);
+  background: #ffffff;
+  z-index: 1000;
+  transition: transform 1s; }
+  .contact.show {
+    transform: translateX(0); }
+  .contact .contact__btn {
+    cursor: pointer;
+    position: absolute;
+    left: -30px;
+    top: 100px;
+    transform-origin: top left;
+    transform: rotate(-90deg); }
+  .contact .contact__modal {
+    width: 100%;
+    height: 100%;
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .contact .contact__modal--github, .contact .contact__modal--email {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      margin: 10px 0; }
+      .contact .contact__modal--github img, .contact .contact__modal--email img {
+        margin-right: 10px;
+        width: 30px; }
+      .contact .contact__modal--github span, .contact .contact__modal--email span {
+        color: #4a4a4a; }
+    .contact .contact__modal--close {
+      cursor: pointer;
+      position: absolute;
+      right: -10px;
+      top: 100px;
+      transform-origin: top left;
+      transform: rotate(-90deg); }
+
 svg.drip {
   width: 100%;
   position: absolute;
@@ -187,7 +233,7 @@ svg.drip {
 .footer {
   background: #ffffff;
   position: relative;
-  min-height: 100vh; }
+  min-height: 10vh; }
   .footer__scribble-box {
     position: absolute;
     top: 50%;

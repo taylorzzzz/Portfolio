@@ -21,5 +21,11 @@ export function checkArrow(scrollPosition) {
 */
 
 export function scrollToProjects() {
-    console.log('click');
+
+    const scrollY = window.innerHeight + 50;
+
+    window.scrollTo({
+        top: scrollY,
+        behavior: "smooth"
+    })
 }
