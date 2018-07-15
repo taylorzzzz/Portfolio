@@ -598,13 +598,12 @@ svg.drip {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 50;
-  border: 1px solid; }
+  z-index: 50; }
   .scroll-meter svg {
     width: 40px; }
     .scroll-meter svg circle {
       fill: none;
-      stroke: #171717;
+      stroke: #f394ad;
       stroke-width: 1px; }
 
 @media screen and (min-width: 768px) {

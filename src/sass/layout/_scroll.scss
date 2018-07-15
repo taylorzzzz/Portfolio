@@ -16,7 +16,6 @@ $transition-fade: '1s all';
         bottom: $container-margin;
         right: $container-margin;
         z-index: 50;
-        border:1px solid;
 
         svg {
             width: 40px;
@@ -24,7 +23,7 @@ $transition-fade: '1s all';
             circle {
                 
                 fill: none;
-                stroke: $color-black;
+                stroke: $color-secondary;
                 stroke-width: 1px;
             }
         }
