@@ -74,8 +74,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: #CC3121;
-  background-image: url(/images/bg1.png);
+  background: #222;
+  background-image: url(/images/Untitled-3.png);
   background-blend-mode: screen;
   background-size: cover; }
   .bg__line {
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 50; }
     .bg__scroll-meter svg circle {
       fill: none;
-      stroke: #CC3121;
+      stroke: #222;
       stroke-width: 2; }
   .bg .scribble {
     height: 50px;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 20px; }
     .bg__scroll-meter svg circle {
       fill: none;
-      stroke: #CC3121;
+      stroke: #222;
       stroke-width: 2; } }
 
 /* Desktops and laptops ----------- */
@@ -169,7 +169,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   position: fixed;
   transform: translateX(100vw);
-  background: #ffffff;
   z-index: 1000;
   transition: transform 1s; }
   .contact.show {
@@ -180,11 +179,12 @@ h1, h2, h3, h4, h5, h6 {
     left: -30px;
     top: 100px;
     transform-origin: top left;
-    transform: rotate(-90deg); }
+    transform: rotate(-90deg);
+    color: #a2a2a2; }
   .contact .contact__modal {
     width: 100%;
     height: 100%;
-    background: pink;
+    background: #f394ad;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,7 +241,7 @@ svg.drip {
     width: 100px;
     height: 100px;
     transform: translate(-50%, -50%);
-    background: #CC3121;
+    background: #222;
     z-index: 90; }
     .footer__scribble-box svg {
       width: 200%;
@@ -253,17 +253,17 @@ svg.drip {
         opacity: 1; }
         .footer__scribble-box svg.scribbles #scribble-1 {
           stroke-width: 1;
-          stroke: #CC3121;
+          stroke: #222;
           opacity: 1;
           animation: 1s scribble 0.333s infinite; }
         .footer__scribble-box svg.scribbles #scribble-2 {
           stroke-width: 1;
-          stroke: #CC3121;
+          stroke: #222;
           opacity: 1;
           animation: 1s scribble 0.666s infinite; }
         .footer__scribble-box svg.scribbles #scribble-3 {
           stroke-width: 1;
-          stroke: #CC3121;
+          stroke: #222;
           opacity: 1;
           animation: 1s scribble 0.999s infinite; }
 
@@ -293,7 +293,7 @@ svg.drip {
     z-index: 100;
     font-size: 50px;
     padding: 50px;
-    background: #cc3121;
+    background: #222222;
     mix-blend-mode: darken; }
     .hero__text--job {
       font-size: 20px; }
