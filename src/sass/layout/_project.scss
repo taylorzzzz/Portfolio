@@ -83,12 +83,7 @@
 
         .project__container {
 
-            .project__container {
-
-                margin-left: calc(2 * #{$container-margin} + #{$panel-width-large});
-                padding: 10px 0;
-    
-            }
+            margin-left: calc(2 * #{$container-margin} + #{$panel-width-large});
             padding: 10px 0;
 
         }
