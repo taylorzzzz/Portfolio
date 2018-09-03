@@ -1,0 +1,70 @@
+
+@import url(https://fonts.googleapis.com/css?family=Pirata+One|Work+Sans:100,300,900|Nova+Cut);
+
+$primary-font: 'Work Sans', sans-serif;
+$name-tag-font: 'Nova Cut', cursive;
+
+body {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    margin: 0;
+}
+
+.contact {
+    font-family: $primary-font;
+}
+.project {
+
+    .project__title {
+        font-size: 360px;
+        font-weight: 800;
+        width: 100%;
+    }
+}
+
+.info-panel {
+    font-family: $primary-font;
+}
+
+.header__name {
+    font-family: $name-tag-font;
+    font-size: 22px;
+
+    &--first {
+
+
+    }
+
+    &--last {
+
+    }
+
+}
+
+.hero {
+    font-family: $primary-font;
+    //font-family: $name-tag-font;
+}
+
+.about__link {
+    font-weight: 300;
+    color: $color-black;
+    opacity: 1;
+    font-size: 12px;
+    font-family: $primary-font;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    mix-blend-mode: differencea;
+}

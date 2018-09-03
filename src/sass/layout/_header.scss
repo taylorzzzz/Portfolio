@@ -1,0 +1,45 @@
+.header {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+     
+    svg {
+        width: 80px;
+        //background: $color-primary;
+        padding: 5px;
+        text {
+            //opacity: 0;
+            fill: none;
+            stroke: $color-black;
+            stroke-width: 1;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            //mix-blend-mode: difference;
+            
+            &.show {
+                animation: 2s animate linear forwards;
+            }
+        }
+        
+    }
+
+}
+
+
+@keyframes animate {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    80% {
+        fill: rgba($color-black, 0);
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: rgba($color-black, 1);
+        opacity: 1;
+        stroke-width: 1;
+    }
+ 
+}

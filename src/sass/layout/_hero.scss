@@ -1,0 +1,122 @@
+.hero {
+    height: calc(100vh - 0px);
+    position: relative;
+    opacity: 1;
+    box-sizing: border-box;
+    //background: $color-white;
+    overflow: hidden;
+
+    &__text {
+        text-transform: uppercase;
+        color: $color-white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        font-size: 50px;
+        padding: 50px;
+        background: rgba($color-primary,1);
+        //mix-blend-mode: darken;
+        border: 1px solid $color-white;
+        
+        &--job {
+            font-size: 20px;
+        }
+        
+    }
+
+    &__dir {
+        z-index: 100;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        height: 50px;
+        transform: translateX(-50%);
+        cursor: pointer;
+
+        &--view {
+            
+        }
+        &--arrow {
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            line, polygon {
+                fill: $color-black;
+                stroke: $color-black;
+            }
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        height: 200px;
+        z-index: 200;
+        animation: 1s bounce alternate infinite linear;
+        transition: opacity 1s;
+        line {
+            stroke: $color-black;
+            //stroke-dasharray: 320;
+            //stroke-dashoffset: -320;
+            //animation: 2s arrowLine infinite;
+            animation-timing-function: cubic-bezier(.17,.67,.87,.37);
+        }
+        
+        polygon {
+            fill: $color-black;
+            stroke: $color-black;
+        }
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    svg {
+
+        text {
+            font-family:WorkSans-Thin;
+            fill: $color-black;
+            stroke: $color-black;
+            //stroke-width: 1px;
+            //fill: none;
+            //text-shadow: 20px 300px 1px black;
+            font-size: 30px;
+            text-anchor: start;
+            //transform: translateY(-100px);
+            //stroke-dasharray: 200;
+            //animation: 5s fall forwards;
+            animation-delay: 3s;
+        }
+    }
+    
+}
+
+@keyframes bounce {
+    0% {
+        transform:translateY(10px);
+
+    }
+    50% {
+
+    }
+    100% {
+        //opacity: .5;
+        transform: translateY(0);
+        
+    }
+}
+
+@keyframes arrowLine {
+    0% {
+    }
+    100%{
+        stroke-dashoffset: -220;
+        opacity: 0;
+    }
+}

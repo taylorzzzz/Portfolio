@@ -1,0 +1,35 @@
+svg.drip {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    right: 0;
+    z-index: 10;
+
+    &__top {
+        top: 0%;
+    }
+    &__bottom {
+        bottom: 0%;
+    }
+
+    path {
+        stroke: none;
+    }
+
+    &--hero path {
+        fill: $color-bg-hero;
+    }
+    &--one path {
+        fill: $color-bg-one;
+    }
+    &--two path {
+        fill: $color-bg-two;
+    }
+    &--three path {
+        fill: $color-bg-three;
+    }
+    &--white path {
+        fill: $color-black;
+    }
+
+}

@@ -1,0 +1,140 @@
+.bg {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background:  $color-primary;
+    //background-image: url(/images/Untitled-3-opt.png);
+    background-blend-mode: lighten;
+    background-size: cover;
+
+    &__line {
+
+        width: 20%;
+        height: 100vh;
+        z-index: -1;
+    
+        .bg__line {
+
+            width: 20%;
+            height: 100vh;
+            border-right: .5px solid rgba($color-white, .1);
+            float: left;
+            
+}    
+        
+    }  
+
+    &__text {
+        position: fixed;
+        top: 0%;
+        left: 0px;
+        right: 0;
+        font-size: 180px;
+        color: rgba($color-white, .05);
+        font-weight: 900;
+        z-index: -1;
+        letter-spacing: .5em;
+        overflow-wrap: break-word;
+        line-height: 1em;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+
+        &.show {
+            opacity: 1;
+        }
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    &__scroll-meter {
+
+        svg {
+            width: 10px;
+            position: absolute;
+            top: 0%;
+            transform: translate(-50%, 50%);
+            right: 50%;
+            z-index: 50;
+
+            circle {
+                
+                fill: none;
+                stroke: $color-primary;
+                stroke-width: 2;
+            }
+        }
+    }
+
+    .scribble {
+            
+        height: 50px;
+        position: absolute;
+        transform-origin: top left;
+        right: 20px;
+        bottom: 20px;
+
+        rect {
+            fill: $color-white;
+            stroke: $color-white;
+            animation: 1s scribbleBox infinite alternate;
+        }
+
+        @for $i from 1 through 3 {
+
+            #scribble-#{$i} {
+                stroke-width: 1;
+                stroke: $color-white;
+                opacity: 1;
+                animation: .5s scribble $i * .333s infinite;
+            }
+        }
+        path {
+            
+        }
+    }
+}
+
+/* Ipad */
+@media screen and (min-width: 768px) {
+
+    .bg__text {
+        left: calc(2 * #{$container-margin} + #{$panel-width-med});
+    }
+
+    .bg__scroll-meter {
+        svg {
+            width: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: $container-margin;
+
+            circle {
+                
+                fill: none;
+                stroke: $color-primary;
+                stroke-width: 2;
+            }
+        }
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+    .bg__text {
+        left: calc(2 * #{$container-margin} + #{$panel-width-large});
+    }
+
+}
+
+
