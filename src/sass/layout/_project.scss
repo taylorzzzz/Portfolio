@@ -82,10 +82,8 @@
     .project {
 
         .project__container {
-
             margin-left: calc(2 * #{$container-margin} + #{$panel-width-large});
             padding: 10px 0;
-
         }
         
         &__img {
@@ -96,13 +94,6 @@
     }
 
 }
-
-
-
-
-
-
-
 
 
 

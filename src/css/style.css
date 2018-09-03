@@ -495,7 +495,6 @@ svg.drip {
 /* Desktop and laptop  *************/
 @media screen and (min-width: 1224px) {
   .info-panel {
-    width: 350px;
     width: 350px; } }
 
 @keyframes button-on-hover {
@@ -566,10 +565,8 @@ svg.drip {
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
   .project .project__container {
+    margin-left: calc(2 * 20px + 350px);
     padding: 10px 0; }
-    .project .project__container .project__container {
-      margin-left: calc(2 * 20px + 350px);
-      padding: 10px 0; }
   .project__img {
     max-width: 90%; } }
 
